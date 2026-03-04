@@ -1,3 +1,5 @@
+Module: [[ADS Module 3]]
+
 ## 1. Definition
 
 A **Trie** is a tree-based data structure used to store a collection of strings in a hierarchical manner.  
