@@ -1,3 +1,6 @@
+Module: [[DBMS Module 3]]  
+Subject: [[Database Management Systems]]  
+Semester: [[Semester 4]]
 ### Definition
 
 **Anomalies** are **problems or inconsistencies that occur in a database when data is redundant or poorly structured**.
