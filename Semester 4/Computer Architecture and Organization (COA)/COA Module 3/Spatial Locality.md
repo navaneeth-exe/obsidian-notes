@@ -1,3 +1,4 @@
+Module: [[COA Module 3]]
 # 1. Spatial Locality
 
 ## Definition

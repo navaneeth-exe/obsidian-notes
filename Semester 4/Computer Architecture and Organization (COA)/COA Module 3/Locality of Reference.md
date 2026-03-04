@@ -1,4 +1,4 @@
-
+Module: [[COA Module 3]]
 ## Definition
 
 **Locality of Reference** is the principle that programs tend to access a relatively small portion of their address space at any given time.
