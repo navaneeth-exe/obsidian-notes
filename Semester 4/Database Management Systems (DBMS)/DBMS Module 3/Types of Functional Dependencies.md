@@ -1,6 +1,4 @@
-Module: [[DBMS Module 3]]  
-Subject: [[Database Management Systems]]  
-Semester: [[Semester 4]]
+Module: [[DBMS Module 3]]
 ## 1. Trivial Functional Dependency
 
 ### Definition

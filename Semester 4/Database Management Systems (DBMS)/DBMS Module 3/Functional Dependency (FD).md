@@ -1,6 +1,4 @@
-Module: [[DBMS Module 3]]  
-Subject: [[Database Management Systems]]  
-Semester: [[Semester 4]]
+Module: [[DBMS Module 3]]
 ### Definition
 
 A **Functional Dependency** in a relational database is a relationship between two sets of attributes where **one attribute uniquely determines another attribute**.
