@@ -35,3 +35,9 @@ Explanation:
 - Each **Student_ID** uniquely identifies a **Department**
 
 So **Student_ID functionally determines Name and Department**.
+
+
+---
+### Types of Functional Dependencies : 
+
+1.Trivial 
