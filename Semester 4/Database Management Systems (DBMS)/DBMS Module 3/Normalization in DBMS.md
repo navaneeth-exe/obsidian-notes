@@ -1,3 +1,6 @@
+Module: [[DBMS Module 3]]  
+Subject: [[Database Management Systems]]  
+Semester: [[Semester 4]]
 ### Definition
 
 **Normalization** is the process of **organizing data in a database to reduce redundancy (duplicate data) and eliminate [[Anomalies]]** by dividing large tables into smaller related tables.
