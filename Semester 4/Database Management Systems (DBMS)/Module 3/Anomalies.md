@@ -86,14 +86,3 @@ We also **lose the information that course "OS" exists**.
 
 ---
 
-## Types of Normal Forms in DBMS
-
-**Normal Forms** are the **stages of normalization** used to organize a database and reduce redundancy.
-
-The main normal forms are:
-
-- **[[1NF (First Normal Form)]]**
-- **[[2NF (Second Normal Form)]]**
-- **3NF (Third Normal Form)**
-    
-- **BCNF (Boyce–Codd Normal Form)**
