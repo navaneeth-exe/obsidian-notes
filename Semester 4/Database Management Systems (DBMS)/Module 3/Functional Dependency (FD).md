@@ -38,6 +38,10 @@ So **Student_ID functionally determines Name and Department**.
 
 
 ---
-### Types of Functional Dependencies : 
+### [[Types of Functional Dependencies]]
 
-1.Trivial 
+1. Trivial 
+2. Non-Trivial
+3. Fully Dependent
+4. Partial Dependent
+5. Transitive Dependent
