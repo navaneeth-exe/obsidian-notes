@@ -115,24 +115,25 @@ Now each field contains **only one value**.
 ### Definition
 
 A relation is in **2NF** if:
-
 1. It is already in **1NF**
-    
 2. There is **no partial dependency**
-    
 
 Meaning:  
 Non-key attributes must depend on the **entire primary key**, not just part of it.
 
 ### Example
 
+```
 | Student_ID | Course_ID | Student_Name | Grade |
+```
 
 Primary Key: **(Student_ID, Course_ID)**
 
 Functional Dependency:
 
+$$
 Student_ID → Student_Name
+$$
 
 Problem:  
 Student_Name depends only on **Student_ID**, not the full key.
@@ -143,12 +144,15 @@ Split into two tables.
 
 Student Table
 
+```
 | Student_ID | Student_Name |
+```
 
 Enrollment Table
 
+```
 | Student_ID | Course_ID | Grade |
-
+```
 Now **partial dependency is removed**.
 
 ---
@@ -158,27 +162,32 @@ Now **partial dependency is removed**.
 ### Definition
 
 A relation is in **3NF** if:
-
 1. It is in **2NF**
-    
 2. There is **no transitive dependency**
-    
 
 Meaning:  
 A non-key attribute should **not depend on another non-key attribute**.
 
 ### Example
 
+```
 | Student_ID | Dept_ID | Dept_Name |
+```
 
 Functional Dependencies:
 
+$$
 Student_ID → Dept_ID  
+$$
+$$
 Dept_ID → Dept_Name
+$$
 
 Here:
 
+$$
 Student_ID → Dept_Name
+$$
 
 This is **transitive dependency**.
 
@@ -188,11 +197,15 @@ Split tables.
 
 Student Table
 
+```
 | Student_ID | Dept_ID |
+```
 
 Department Table
 
+```
 | Dept_ID | Dept_Name |
+```
 
 Now the dependency problem is removed.
 
@@ -206,7 +219,9 @@ A relation is in **BCNF** if:
 
 For every functional dependency:
 
+$$
 X → Y
+$$
 
 **X must be a super key**.
 
@@ -214,12 +229,16 @@ BCNF is a **stronger version of 3NF**.
 
 ### Example
 
+```
 | Student | Course | Instructor |
+```
 
 Dependencies:
 
+```
 (Student, Course) → Instructor  
 Instructor → Course
+```
 
 Problem:  
 **Instructor is not a super key**, so it violates BCNF.
