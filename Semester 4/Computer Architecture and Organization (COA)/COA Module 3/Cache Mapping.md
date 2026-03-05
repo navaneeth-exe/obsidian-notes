@@ -46,7 +46,7 @@ There are **three main techniques**:
 
 1. [[Direct Mapping]]
 2. [[Associative Mapping]]
-3. [[**Set Associative Mapping**]]
+3. [[Set Associative Mapping]]
 
 Each technique decides **how memory blocks are placed into cache**.
 
