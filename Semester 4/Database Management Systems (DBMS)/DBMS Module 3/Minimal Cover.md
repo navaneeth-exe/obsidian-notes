@@ -94,17 +94,21 @@ A → C
 
 Given FDs:
 
+```
 A → BC  
 B → C  
 A → B  
 AB → C
+```
 
 ### Step 1: Split RHS
 
+```
 A → B  
 A → C  
 B → C  
 AB → C
+```
 
 ### Step 2: Remove extraneous attributes
 
@@ -112,10 +116,12 @@ AB → C
 
 ### Final Minimal Cover
 
+```
 A → B  
 A → C  
 B → C
 
+```
 ---
 
 # Importance of Minimal Cover
@@ -123,7 +129,5 @@ B → C
 Minimal cover is used for:
 
 - **Database normalization**
-    
 - **Removing redundant functional dependencies**
-    
 - **Designing efficient database schemas**
