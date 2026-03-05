@@ -33,11 +33,11 @@ Example format:
 
 ### Meaning
 
-|Field|Purpose|
-|---|---|
-|Tag|Identifies which memory block is stored|
-|Index|Selects cache line|
-|Offset|Selects data inside the block|
+| Field  | Purpose                                 |
+| ------ | --------------------------------------- |
+| Tag    | Identifies which memory block is stored |
+| Index  | Selects cache line                      |
+| Offset | Selects data inside the block           |
 
 ---
 
