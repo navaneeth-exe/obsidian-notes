@@ -38,6 +38,17 @@ When the CPU requests data:
 4. If data is found → **[[Hit Rate & Miss Rate|Cache Hit]]**
 5. If data is not found → **[[Hit Rate & Miss Rate|Cache Miss]]**, data is fetched from main memory.
 
+---
+
+## Types of Cache Mapping Techniques
+
+There are **three main techniques**:
+
+1. [[**Direct Mapping**]]
+2. [[**Associative Mapping**]]
+3. [[**Set Associative Mapping**]]
+
+Each technique decides **how memory blocks are placed into cache**.
 
 
 
@@ -49,10 +60,4 @@ When the CPU requests data:
 
 
 
-
-
-
-
-
-
-Modul
+Module : [[COA Module 3]]
