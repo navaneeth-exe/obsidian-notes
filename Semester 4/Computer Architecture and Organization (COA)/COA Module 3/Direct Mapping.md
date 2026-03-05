@@ -53,7 +53,10 @@ Example format:
 
 3. The **Index bits select the specific cache line** to check.
 4. The system checks the **Valid Bit** of that cache line.
-		| Valid Bit | Tag | Data Block |
+```
+		| Tag | Valid Bit | Data Block |
+```
+
 5. If the **Valid Bit = 0 → Cache Miss** (line is empty).
 6. If the **Valid Bit = 1**, the **Tag stored in the cache line is compared with the address tag**.
 7. If the **tags match → Cache Hit** and the required data is read from the cache.
