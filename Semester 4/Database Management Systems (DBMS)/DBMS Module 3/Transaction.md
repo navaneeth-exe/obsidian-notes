@@ -80,12 +80,14 @@ Where **X** is the updated data item.
 
 ### Example
 
+```
 A = A - 1000  
 Write(A)
+```
 
 Here:
 - The new value of **A** is written back to the database.
-    
+
 
 ---
 
@@ -98,9 +100,7 @@ The **Commit operation** permanently saves all the changes made by a transaction
 After a commit:
 
 - The transaction **successfully completes**
-    
 - Changes **cannot be undone**
-    
 
 ### Example
 
@@ -119,11 +119,8 @@ The **Rollback operation** cancels all changes made during a transaction and res
 Rollback is used when:
 
 - An error occurs
-    
 - The transaction fails
-    
 - The system crashes
-    
 
 ### Example
 
@@ -137,6 +134,7 @@ If money is deducted from account **A** but cannot be added to account **B**, th
 
 Transfer ₹1000 from **Account A → Account B**
 
+```
 Read(A)  
 A = A - 1000  
 Write(A)  
@@ -146,10 +144,10 @@ B = B + 1000
 Write(B)  
   
 Commit
+```
 
 If any error occurs during the transaction:
-
-Rollback
+	Rollback
 
 ---
 
