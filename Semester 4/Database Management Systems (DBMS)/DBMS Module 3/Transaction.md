@@ -28,3 +28,13 @@ If step 1 happens but step 2 fails, the system must **rollback**, otherwise mone
 
 So the transaction must be **completed fully or cancelled completely**.
 
+
+---
+
+The main transaction operations are:
+
+- **Read**
+- **Write**
+- **Commit**
+- **Rollback**
+
