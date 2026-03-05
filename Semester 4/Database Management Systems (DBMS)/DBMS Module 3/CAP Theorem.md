@@ -95,4 +95,85 @@ So the system keeps running despite the **network partition**.
 ---
 
 
+## Trade-offs in CAP Theorem
+
+The **CAP Theorem** states that a distributed database system can provide **only two out of three properties**:
+
+- **Consistency (C)**
+- **Availability (A)**
+- **Partition Tolerance (P)**
+
+Because of this limitation, database designers must **choose which two properties to prioritize**, which leads to **trade-offs**.
+
+---
+
+# 1. CA (Consistency + Availability)
+
+### Meaning
+
+The system guarantees:
+- **Consistent data across all nodes**
+- **Every request receives a response**
+- 
+But the system **cannot tolerate network partitions**.
+
+### Example
+
+Traditional relational databases such as:
+- MySQL
+- PostgreSQL
+
+These systems ensure **accurate and consistent data**, but if a **network failure occurs**, the system may stop responding.
+
+---
+
+# 2. AP (Availability + Partition Tolerance)
+
+### Meaning
+
+The system guarantees:
+- **System remains available**
+- **Works even during network failures**
+
+However, **data may become temporarily inconsistent**.
+
+### Example
+
+Social media platforms.
+
+For instance:
+- A user subscribes to a channel.
+- Due to network delay, some servers may still show the **old subscriber count** for a short time.
+
+Example databases:
+- Cassandra
+- DynamoDB
+- CouchDB
+
+---
+
+# 3. CP (Consistency + Partition Tolerance)
+
+### Meaning
+
+The system guarantees:
+- **Data consistency**
+- **System continues during network partition**
+
+However, **availability may be reduced**, meaning some requests may be rejected.
+
+### Example
+
+Train ticket booking system:
+If **only one seat is left**, the system may **reject some requests** to prevent incorrect booking.
+
+Example databases:
+- HBase
+- MongoDB
+- Redis
+
+
+![[Pasted image 20260306000436.png]]
+
+---
 Module : [[DBMS Module 3]]
