@@ -7,8 +7,8 @@ A system can provide **only two out of the three properties** simultaneously.
 CAP stands for:
 
 - [[#1. Consistency (C)|C – Consistency]]
-- **[[A – Availability]]**
-- **P – Partition Tolerance**
+- [[#2. Availability (A)|A – Availability]]
+- [[#3. Partition Tolerance (P)|P – Partition Tolerance]]
 
 This theorem was proposed by **Eric Brewer**.
 
