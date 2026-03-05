@@ -104,7 +104,9 @@ After a commit:
 
 ### Example
 
+```
 Commit
+```
 
 If a money transfer transaction is successful, the system performs **commit** to save the changes permanently.
 
@@ -124,7 +126,9 @@ Rollback is used when:
 
 ### Example
 
+```
 Rollback
+```
 
 If money is deducted from account **A** but cannot be added to account **B**, the system performs **rollback** so the balance returns to the original value.
 
@@ -147,8 +151,9 @@ Commit
 ```
 
 If any error occurs during the transaction:
-	Rollback
-
+```
+Rollback
+```
 ---
 
 # Summary Table
