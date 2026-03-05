@@ -164,3 +164,17 @@ Rollback
 |Write|Updates data in database|
 |Commit|Permanently saves changes|
 |Rollback|Cancels transaction and restores old data|
+
+
+---
+
+## [[Transaction States]] in DBMS
+
+A **[[transaction state]]** represents the **different stages a transaction goes through during its execution** in a database system.
+
+The main [[transaction states]] are:
+- Active
+- Partially Committed
+- Committed
+- Failed
+- Aborted
