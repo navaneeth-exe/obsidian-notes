@@ -170,9 +170,9 @@ Rollback
 
 ## [[Transaction States]] in DBMS
 
-A **[[transaction state]]** represents the **different stages a transaction goes through during its execution** in a database system.
+A **[[Transaction States]]** represents the **different stages a transaction goes through during its execution** in a database system.
 
-The main transaction states are:
+The main [[Transaction States]] are:
 - Active
 - Partially Committed
 - Committed

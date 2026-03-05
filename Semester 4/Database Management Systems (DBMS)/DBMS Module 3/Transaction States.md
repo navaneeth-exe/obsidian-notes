@@ -1,3 +1,5 @@
+
+Module : [[DBMS Module 3]]
 # 1. Active State
 
 ### Definition
@@ -66,7 +68,7 @@ Reasons may include:
 - Power failure
 - Invalid dat
 - Hardware failure
-- 
+
 At this stage the transaction cannot continue execution.
 
 ---
