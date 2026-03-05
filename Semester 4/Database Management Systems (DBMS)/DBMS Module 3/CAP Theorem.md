@@ -22,27 +22,19 @@ Consistency means **all nodes in the distributed system return the same latest d
 
 When a user reads data, they always get the **most recent updated value**.
 
-Example
-Suppose a user has **₹500 in a bank account**.
+### Example
 
+Suppose a user has **₹500 in a bank account**.
 He spends **₹200**, so the balance should become **₹300**.
 
+![[Pasted image 20260305234050.png]]
 If the system is consistent:
-
 - DB1 → Balance = **300**
-    
 - DB2 → Balance = **300**
-    
 
 But if the update reaches **only one database**:
-
 - DB1 → **300**
-    
 - DB2 → **500**
-    
 
 Now the system shows **different values**, so it becomes **inconsistent**.
-
-CAP THEORM
-
 👉 So **consistency means every node shows the same updated value**.
