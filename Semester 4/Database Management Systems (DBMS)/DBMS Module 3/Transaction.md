@@ -84,7 +84,6 @@ A = A - 1000
 Write(A)
 
 Here:
-
 - The new value of **A** is written back to the database.
     
 
