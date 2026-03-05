@@ -89,3 +89,10 @@ So the system keeps running despite the **network partition**.
 ![[Pasted image 20260305234529.png]]
 
 👉 Partition tolerance means **system keeps working during network failures**.
+
+
+
+---
+
+
+Module : [[DBMS Module 3]]
