@@ -74,5 +74,18 @@ This happens when the network **splits into partitions** and servers cannot comm
 
 ### Example
 
-If one data center cannot communicate with another due to network failure, the system should still function.
+1. If one data center cannot communicate with another due to network failure, the system should still function.
 
+2. Suppose two database servers store subscriber data:
+- **DB1**
+- **DB2**
+
+A **network failure happens**, so DB1 cannot communicate with DB2.
+
+Even though the connection is broken, the system **still allows users to check subscriber count using stored replica data**.
+
+So the system keeps running despite the **network partition**.
+
+![[Pasted image 20260305234529.png]]
+
+👉 Partition tolerance means **system keeps working during network failures**.
