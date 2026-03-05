@@ -12,7 +12,7 @@ So basically:
 The mapping is done using a **modulo function**.
 
 $$
-Cache Line=(Memory Block Number)mod(Number of Cache Lines)
+Cache Line=(Memory Block Number)\ mod\ (Number of Cache Lines)
 $$
 
 ---
@@ -58,17 +58,19 @@ Assume:
 - Memory blocks = **32**
 
 Mapping formula:
-
+$$
+Cache Line=Block Number\mod \ 8
+$$
 
 Example mappings:
 
-|Memory Block|Cache Line|
-|---|---|
-|0|0|
-|1|1|
-|8|0|
-|9|1|
-|16|0|
+| Memory Block | Cache Line |
+| ------------ | ---------- |
+| 0            | 0          |
+| 1            | 1          |
+| 8            | 0          |
+| 9            | 1          |
+| 16           | 0          |
 
 Notice something 👀
 
@@ -82,6 +84,7 @@ This causes **conflict misses**.
 
 # Diagram (Simple)
 
+```
 Main Memory Blocks  
   
 0   → Cache Line 0  
@@ -90,7 +93,7 @@ Main Memory Blocks
 3   → Cache Line 3  
 8   → Cache Line 0  
 9   → Cache Line 1
-
+```
 Multiple memory blocks compete for the **same cache line**.
 
 ---
@@ -98,18 +101,13 @@ Multiple memory blocks compete for the **same cache line**.
 # Advantages
 
 1. **Simple implementation**
-    
 2. **Fast access**
-    
 3. **Low hardware cost**
-    
 
 ---
 
 # Disadvantages
 
 1. **High conflict misses**
-    
 2. Different blocks map to the same cache line
-    
 3. Poor cache utilization compared to associative mapping
