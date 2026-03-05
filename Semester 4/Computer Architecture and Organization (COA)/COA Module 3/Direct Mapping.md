@@ -44,11 +44,20 @@ Example format:
 # Working of Direct Mapping
 
 1. CPU generates a **memory address**.
-2. The **Index bits** determine which **cache line** to check. 
-3. The **Tag** stored in that cache line is compared with the address tag.
-4. If they match → **Cache Hit**
-5. If they don't match → **Cache Miss**, block is fetched from main memory.
+    
+2. The **memory address is divided into Tag, Index, and Offset**.
 
+3. The **Index bits select the specific cache line** to check.
+    
+4. The system checks the **Valid Bit** of that cache line.
+    
+5. If the **Valid Bit = 0 → Cache Miss** (line is empty).
+    
+6. If the **Valid Bit = 1**, the **Tag stored in the cache line is compared with the address tag**.
+    
+7. If the **tags match → Cache Hit** and the required data is read from the cache.
+    
+8. If the **tags do not match → Cache Miss**, the required block is fetched from **main memory** and placed in that cache line.
 ---
 
 # Example
