@@ -38,3 +38,41 @@ But if the update reaches **only one database**:
 
 Now the system shows **different values**, so it becomes **inconsistent**.
 👉 So **consistency means every node shows the same updated value**.
+
+---
+
+# 2. Availability (A)
+
+### Definition
+
+Availability means **every request to the system receives a response**, even if some nodes fail.
+
+The system remains **operational at all times**.
+
+### Example
+Imagine a **YouTube creator** with **1000 subscribers**.
+A user from another location wants to **subscribe**.
+Even if the system uses **different database servers**, the subscription should still work.
+
+![[Pasted image 20260305234239.png]]
+After subscribing:
+Subscribers → **1001**
+
+If the system refuses the request because servers are not synchronized, then **availability is lost**.
+
+👉 Availability means **the system always responds to user requests**.
+
+---
+
+# 3. Partition Tolerance (P)
+
+### Definition
+
+Partition tolerance means the system **continues working even when there is a communication failure between nodes**.
+
+This happens when the network **splits into partitions** and servers cannot communicate with each other.
+
+### Example
+
+If one data center cannot communicate with another due to network failure, the system should still function.
+
