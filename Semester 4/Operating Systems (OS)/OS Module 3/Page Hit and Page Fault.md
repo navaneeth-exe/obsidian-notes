@@ -73,3 +73,6 @@ When a page fault occurs, the operating system performs the following steps:
 
 8. **Restart the Interrupted Instruction**  
     The instruction that caused the page fault is **re-executed**, and the program continues normally.
+
+
+![[Pasted image 20260307023047.png]]
