@@ -31,7 +31,7 @@ CPU requests Page 1 → already in RAM → Page Hit
 
 ---
 
-# Page Fault
+# 2. Page Fault
 
 ### Definition
 
@@ -76,3 +76,33 @@ When a page fault occurs, the operating system performs the following steps:
 
 
 ![[Pasted image 20260307023047.png]]
+
+
+---
+
+## Page Fault Handling Flow (Diagram for Exam)
+
+```
+CPU requests a page  
+        ↓  
+Check page table  
+        ↓  
+Page in memory?  
+   ↓         ↓  
+ Yes        No  
+(Page Hit)  Page Fault  
+             ↓  
+        Trap to OS  
+             ↓  
+      Locate page on disk  
+             ↓  
+      Find free frame  
+             ↓  
+     Replace page if needed  
+             ↓  
+      Load page into RAM  
+             ↓  
+     Update page table  
+             ↓  
+     Restart instruction
+```
