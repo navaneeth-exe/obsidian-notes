@@ -18,9 +18,6 @@ This mechanism is called **Demand Paging**.
 
 ---
 
-
----
-
 ## Key Concepts of Virtual Memory
 
 ### 1. Virtual Address
@@ -65,3 +62,37 @@ Typical size:
 A **fixed-size block of physical memory**.
 
 Pages from virtual memory are loaded into frames in RAM.
+
+
+---
+
+## Why Virtual Memory is Needed
+
+1. **Programs can be larger than RAM**
+	- Large programs can run even with limited physical memory.
+	
+2. **Better Memory Utilization**
+    - Only required portions of programs are loaded.
+    
+3. **More Programs in Memory**
+    - Allows **multiprogramming** (many processes run simultaneously).
+    
+4. **Efficient CPU Utilization**
+    - CPU doesn’t wait for large programs to load entirely.
+
+5. **Process Isolation**
+	- Each process has its own address space.
+
+---
+
+## Disadvantages of Virtual Memory
+
+1. **Page faults slow down execution**.
+2. Requires **complex memory management**.
+3. Needs **secondary storage (disk)**.
+4. Excessive page faults cause **Thrashing**.
+
+
+
+
+Module : [[OS Module 3]]
