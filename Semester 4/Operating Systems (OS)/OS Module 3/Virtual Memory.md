@@ -18,19 +18,6 @@ This mechanism is called **Demand Paging**.
 
 ---
 
-## Why Virtual Memory is Needed
-
-1. **Programs can be larger than RAM**
-	- Large programs can run even with limited physical memory.
-	
-2. **Better Memory Utilization**
-    - Only required portions of programs are loaded.
-    
-3. **More Programs in Memory**
-    - Allows **multiprogramming** (many processes run simultaneously).
-    
-4. **Efficient CPU Utilization**
-    - CPU doesn’t wait for large programs to load entirely.
 
 ---
 
