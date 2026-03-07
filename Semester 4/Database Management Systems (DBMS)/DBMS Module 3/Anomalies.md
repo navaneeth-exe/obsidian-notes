@@ -70,10 +70,10 @@ A **deletion anomaly** occurs when **deleting some data unintentionally removes 
 
 ### Example
 
-|Student_ID|Student_Name|Course|
-|---|---|---|
-|101|Rahul|DBMS|
-|102|Anu|OS|
+| Student_ID | Student_Name | Course |
+| ---------- | ------------ | ------ |
+| 101        | Rahul        | DBMS   |
+| 102        | Anu          | OS     |
 
 If we delete the record:
 
