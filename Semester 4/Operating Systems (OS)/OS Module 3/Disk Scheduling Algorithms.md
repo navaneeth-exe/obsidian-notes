@@ -125,5 +125,7 @@ Similar to C-SCAN but the head **moves only up to the last request before jumpin
 | **LOOK**                            | Similar to SCAN but moves only up to last request                   | Less          | Rare       | Better than SCAN         |
 | **C-LOOK**                          | Similar to C-SCAN but goes only to last request before jumping back | Least         | No         | Best performance         |
 
+---
 
-Module : [[OS]]
+
+Module : [[OS Module 3]]
