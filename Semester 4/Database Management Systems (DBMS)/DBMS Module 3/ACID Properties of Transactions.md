@@ -41,7 +41,7 @@ It maintains **database rules and constraints**.
 
 ### Example
 
-If the total money in two accounts is ₹5000 before the transaction, it must **remain ₹5000 after the transaction**.
+If the total money in **two accounts** is ₹5000 before the transaction, it must **remain ₹5000 after the transaction**.
 
 No data integrity rules should be violated.
 
