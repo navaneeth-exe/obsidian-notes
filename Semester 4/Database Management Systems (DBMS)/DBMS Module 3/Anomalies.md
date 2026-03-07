@@ -20,10 +20,10 @@ An **insertion anomaly** occurs when **we cannot insert data into the database w
 
 ### Example
 
-|Student_ID|Student_Name|Course|
-|---|---|---|
-|101|Rahul|DBMS|
-|102|Anu|OS|
+| Student_ID | Student_Name | Course |
+| ---------- | ------------ | ------ |
+| 101        | Rahul        | DBMS   |
+| 102        | Anu          | OS     |
 
 Problem:  
 Suppose we want to add a **new course "AI"**, but no student has enrolled yet.
