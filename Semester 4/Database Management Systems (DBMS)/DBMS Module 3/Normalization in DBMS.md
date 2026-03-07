@@ -118,7 +118,12 @@ Now each field contains **only one value**.
 A relation is in **2NF** if:
 1. It is already in **1NF**
 2. There is **no partial dependency**
-		Proper subset of **Candidate key** will 
+		Proper subset of **Candidate key** will determine the **non - prime attribute.**
+```
+CK - NPA (OK)
+NPA - NPA (OK)
+Subset of CK - NPA (NOT OK)
+```
 
 Meaning:  
 Non-key attributes must depend on the **entire primary key**, not just part of it.
