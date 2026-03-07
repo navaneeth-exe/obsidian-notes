@@ -171,6 +171,8 @@ Now **partial dependency is removed**.
 A relation is in **3NF** if:
 1. It is in **2NF**
 2. There is **no transitive dependency**
+		When a NPA dependent on NPA -> This is called Transitibve Dependency
+		
 
 Meaning:  
 A non-key attribute should **not depend on another non-key attribute**.
