@@ -87,7 +87,7 @@ The main normal forms are:
 ### Definition
 
 A relation is in **1NF** if:
-1. Each attribute contains **atomic (single) values**
+1. Domain of each attribute contains **atomic (single) values**
 2. There are **no repeating groups**
 3. Each record can be uniquely identified
 
