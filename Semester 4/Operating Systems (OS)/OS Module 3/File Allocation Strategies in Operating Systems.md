@@ -4,7 +4,6 @@ The three main file allocation methods are:
 1. **Contiguous Allocation**
 2. **Linked Allocation**
 3. **Indexed Allocation**
-    
 
 ---
 
@@ -15,7 +14,6 @@ The three main file allocation methods are:
 In **contiguous allocation**, each file occupies **continuous blocks on the disk**. The blocks of a file are stored next to each other.
 
 Example:
-
 ```
 File A → Blocks 10, 11, 12, 13  
 File B → Blocks 14, 15
@@ -81,7 +79,7 @@ The directory stores the **address of the first block** of the file.
 In **indexed allocation**, each file has an **index block** that contains the addresses of all disk blocks of that file.
 
 Example:
-
+```
 Index Block
 -----------
 9
@@ -89,6 +87,7 @@ Index Block
 1
 10
 25
+```
 
 Each entry points to a block containing file data.
 
@@ -97,23 +96,17 @@ Each entry points to a block containing file data.
 ### Advantages
 
 - Supports **direct access**
-    
 - No external fragmentation
-    
 - Easy file expansion
-    
 
 ---
-
 ### Disadvantages
 
 - Extra space required for the index block
-    
 - Index block overhead for small files
-
 
 
 ---
 
 
-Module : [[OS Module 3]
+Module : [[OS Module 3]]
