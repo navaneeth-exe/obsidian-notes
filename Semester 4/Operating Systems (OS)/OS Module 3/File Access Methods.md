@@ -29,6 +29,8 @@ Record1 → Record2 → Record3 → Record4 → Record5
 
 If the system needs **Record4**, it must read Record1, Record2, and Record3 first.
 
+
+![[WhatsApp Image 2026-03-07 at 12.05.17 PM.jpeg]]
 ---
 
 ### Operations
@@ -87,6 +89,8 @@ Record1  Record2  Record3  Record4  Record5
 
 If the system needs **Record3**, it directly accesses address **2**.
 
+
+![[WhatsApp Image 2026-03-07 at 12.05.18 PM.jpeg]]
 ---
 
 ### Operations
@@ -142,6 +146,8 @@ D → Record4
 ```
 
 To access **Record3**, the system searches the index for **C**.
+
+![[WhatsApp Image 2026-03-07 at 12.05.17 PM (1).jpeg]]
 
 ---
 
