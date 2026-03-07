@@ -5,4 +5,4 @@ Subject : [[Operating Systems]]
 -  [[Virtual Memory]]
 - [[Demand Paging]]
 - [[Page Hit and Page Fault]]
-- 
+- [[File Access Methods]]
