@@ -44,10 +44,10 @@ If one place is missed, it leads to **inconsistent data**.
 
 ### Example
 
-|Student_ID|Student_Name|Course|
-|---|---|---|
-|101|Rahul|DBMS|
-|101|Rahul|OS|
+| Student_ID | Student_Name | Course |
+| ---------- | ------------ | ------ |
+| 101        | Rahul        | DBMS   |
+| 101        | Rahul        | OS     |
 
 If Rahul changes his name to **Rahul Kumar**, we must update it in **all rows**.
 
