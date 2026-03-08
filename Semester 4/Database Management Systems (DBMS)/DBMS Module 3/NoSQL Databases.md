@@ -15,7 +15,6 @@ Unlike traditional relational databases, NoSQL databases **do not use fixed tabl
 Data is stored in **documents**, usually in formats like **JSON or BSON**.
 Each document contains **key–value pairs** and can have different structures.
 ### Example
-
 ```
 {  
   "student_id": 101,  

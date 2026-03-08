@@ -16,7 +16,7 @@ $$
 If out of 100 memory accesses, 85 are found in cache:
 
 $$
-Hit Rate=85100=0.85=85%\text{Hit Rate} = \frac{85}{100} = 0.85 = 85\%Hit Rate=10085​=0.85=85\%
+Hit Rate=85/100=0.85=85%\text{Hit Rate} = \frac{85}{100} = 0.85 = 85\%Hit Rate=10085​=0.85=85\%
 $$
 
 ---

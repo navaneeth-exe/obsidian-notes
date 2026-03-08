@@ -66,7 +66,7 @@ Reasons may include:
 
 - System crash
 - Power failure
-- Invalid dat
+- Invalid data
 - Hardware failure
 
 At this stage the transaction cannot continue execution.
