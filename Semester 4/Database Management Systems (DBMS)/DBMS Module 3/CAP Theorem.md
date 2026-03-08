@@ -131,12 +131,9 @@ These systems ensure **accurate and consistent data**, but if a **network failur
 
 ### Meaning
 
-The system guarantees:
-- **System remains available**
-- **Works even during network failures**
+In this model, the system **remains available and continues to function even during network partition**.
 
-However, **data may become temporarily inconsistent**.
-
+However, the data may become **temporarily inconsistent** until all nodes are synchronized.
 ### Example
 
 Social media platforms.
@@ -156,11 +153,9 @@ Example databases:
 
 ### Meaning
 
-The system guarantees:
-- **Data consistency**
-- **System continues during network partition**
+In this model, the system ensures **consistent data and continues to operate even during network partition**.
 
-However, **availability may be reduced**, meaning some requests may be rejected.
+However, some requests may be **rejected or delayed**, which reduces **availability**.
 
 ### Example
 
