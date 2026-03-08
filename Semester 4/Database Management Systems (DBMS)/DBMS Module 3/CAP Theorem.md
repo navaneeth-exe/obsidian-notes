@@ -111,11 +111,9 @@ Because of this limitation, database designers must **choose which two propertie
 
 ### Meaning
 
-The system guarantees:
-- **Consistent data across all nodes**
-- **Every request receives a response**
-- 
-But the system **cannot tolerate network partitions**.
+In this model, the system provides **consistent data across all nodes** and **responds to every request**.
+
+However, the system **cannot tolerate network partition failures**. If a partition occurs, the system may **stop working to maintain consistency**.
 
 ### Example
 
