@@ -14,7 +14,7 @@ Module: [[COA Module 3]]
 
 - Variables inside loops are reused.
 - Frequently called functions.
-- Repeated condition checks.
+- Repeated condition checks..
 
 ---
 
