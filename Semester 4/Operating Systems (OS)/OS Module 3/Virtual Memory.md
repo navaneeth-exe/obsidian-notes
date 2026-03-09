@@ -74,8 +74,8 @@ Pages from virtual memory are loaded into frames in RAM.
 2. **Better Memory Utilization**
     - Only required portions of programs are loaded.
     
-3. **More Programs in Memory**
-    - Allows **multiprogramming** (many processes run simultaneously).
+3. **Allows higher multiprogramming**  
+    More processes can stay in memory simultaneously.
     
 4. **Efficient CPU Utilization**
     - CPU doesn’t wait for large programs to load entirely.
