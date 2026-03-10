@@ -100,7 +100,7 @@ Each cache set stores :
 		- **Tag** → identifies the memory block
 
 3. The **Index bits select the specific cache set** to check.
-4. The system checks the **Valid Bit** of that cache line.
+4. The system checks the **Valid Bit** of that cache set.
 ```
 		| Tag | Valid Bit | Data Block |
 ```
