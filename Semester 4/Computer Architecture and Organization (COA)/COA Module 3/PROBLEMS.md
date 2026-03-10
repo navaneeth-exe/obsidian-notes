@@ -12,6 +12,7 @@
 
 Code:
 
+```
 addi s0, zero, 5  
 addi s1, zero, 0  
   
@@ -23,10 +24,9 @@ addi s0, s0, −1
 j LOOP  
   
 DONE:
+```
 
 Each iteration performs **2 memory accesses**.
-
-module 3 Complete notes
 
 ---
 
@@ -41,7 +41,9 @@ lw s4, 0x24(s1)
 
 So:
 
-Total accesses=5×2=10Total\ accesses = 5 \times 2 = 10Total accesses=5×2=10
+$$
+Total\ accesses=5×2=10
+$$
 
 ---
 
@@ -50,11 +52,8 @@ Total accesses=5×2=10Total\ accesses = 5 \times 2 = 10Total accesses=5×2=10
 Cache has **8 sets**.
 
 Both addresses:
-
 - **0x4**
-    
 - **0x24**
-    
 
 map to **Set 1**.
 
@@ -67,7 +66,6 @@ So:
 
 This happens because in a **direct mapped cache each address has only one possible cache location**.
 
-module 3 Complete notes
 
 ---
 
@@ -76,18 +74,12 @@ module 3 Complete notes
 Cache is empty.
 
 1️⃣ Access **0x4**
-
 - Miss
-    
 - Stored in **Set 1**
-    
 
 2️⃣ Access **0x24**
-
 - Maps to **same set (Set 1)**
-    
 - Replaces **0x4**
-    
 
 So now cache contains:
 
@@ -98,20 +90,13 @@ Set 1 → 0x24
 # Step 4 – Second Iteration
 
 1️⃣ Access **0x4**
-
 - Not in cache
-    
 - Miss
-    
 - Replaces **0x24**
-    
 
 2️⃣ Access **0x24**
-
 - Miss again
-    
 - Replaces **0x4**
-    
 
 This keeps happening every loop.
 
@@ -133,28 +118,14 @@ Each new access **evicts the previous block**.
 
 Total accesses:
 
-101010
+10
 
 Misses:
 
-101010 Miss Rate=1010=100%Miss\ Rate = \frac{10}{10} = 100\%Miss Rate=1010​=100%
-
----
-
-# Final Exam Conclusion
-
-- Addresses **0x4 and 0x24 map to the same cache set**
-    
-- Each access replaces the other block
-    
-- This causes **conflict misses**
-    
-- Therefore,
-    
-
-Miss Rate=100%Miss\ Rate = 100\%Miss Rate=100%
-
-This example demonstrates **cache block conflict in a direct mapped cache**
+10
+$$
+Miss Rate=10/10=100%
+$$
 
 
 ---
