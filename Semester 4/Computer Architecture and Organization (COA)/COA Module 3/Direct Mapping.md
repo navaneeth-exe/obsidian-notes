@@ -30,12 +30,35 @@ Example from the notes:
 - Cache capacity = **8 words**
 - Block size = **1 word**
     
-B=C/b=8/1=8B = C/b = 8/1 = 8B=C/b=8/1=8
+$$
+B=C/b=8/1=8
+$$
 
 So the cache has **8 sets**, each containing **one word**.
 
 ---
 
+
+# Address Mapping
+
+Main memory is divided into blocks of the same size as cache blocks.
+
+Memory blocks are mapped to cache sets as follows:
+
+- Memory block 0 → Cache set 0
+- Memory block 1 → Cache set 1
+- Memory block 2 → Cache set 2
+- …
+- Memory block 7 → Cache set 7
+
+After that, mapping **wraps around**:
+- Memory block 8 → Cache set 0
+- Memory block 9 → Cache set 1
+
+Thus **many memory blocks can map to the same cache set**.
+
+
+---
 # Structure of Address in Direct Mapping
 
 A memory address is divided into **three parts**:
@@ -90,6 +113,22 @@ Each cache set stores :
 
 ---
 
+# Advantages
+
+1. **Simple implementation**
+2. **Fast access**
+3. **Low hardware cost**
+
+---
+
+# Disadvantages
+
+1. **High conflict misses**
+2. Different blocks map to the same cache line
+3. Poor cache utilization compared to associative mapping
+
+
+---
 # Example
 
 Assume:
@@ -137,16 +176,3 @@ Multiple memory blocks compete for the **same cache line**.
 
 ---
 
-# Advantages
-
-1. **Simple implementation**
-2. **Fast access**
-3. **Low hardware cost**
-
----
-
-# Disadvantages
-
-1. **High conflict misses**
-2. Different blocks map to the same cache line
-3. Poor cache utilization compared to associative mapping
