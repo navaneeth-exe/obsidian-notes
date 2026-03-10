@@ -87,6 +87,9 @@ Each cache set stores :
 - **Valid bit**
 	- Valid = 1 → data is valid
 	- Valid = 0 → entry is empty
+```
+			| Tag | Valid Bit | Data Block |
+```
 ---
 
 # Working of Direct Mapping
@@ -106,7 +109,7 @@ Each cache set stores :
 ```
 
 5. If the **Valid Bit = 0 → Cache Miss** (line is empty).
-6. If the **Valid Bit = 1**, the **Tag stored in the cache line is compared with the address tag**.
+6. If the **Valid Bit = 1**, the **Tag stored in the cache set is compared with the address tag**.
 7. If the **tags match → Cache Hit** and the required data is read from the cache.
 8. If the **tags do not match → Cache Miss**, the required block is fetched from **main memory** and placed in that cache line.
 
