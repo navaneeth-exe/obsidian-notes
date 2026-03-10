@@ -4,10 +4,7 @@ Module : [[COA Module 3]]
 
 ## Definition
 
-**Direct Mapping** is a cache mapping technique in which **each block of main memory is mapped to exactly one specific cache line**.
-
-So basically:  
-👉 One memory block → **only one fixed cache location**.
+A **direct mapped cache** is a cache organization in which **each block of main memory maps to exactly one cache set**. Each set contains **only one cache block**, so a memory address has **only one possible location in the cache**.
 
 The mapping is done using a **modulo function**.
 
@@ -22,7 +19,7 @@ $$
 A memory address is divided into **three parts**:
 
 1. **Tag**
-2. **Index (Cache Line)**
+2. **Set Index (Cache Line)**
 3. **Block Offset**
 
 Example format:
@@ -36,7 +33,7 @@ Example format:
 | Field  | Purpose                                 |
 | ------ | --------------------------------------- |
 | Tag    | Identifies which memory block is stored |
-| Index  | Selects cache line                      |
+| Index  | Selects cache set                       |
 | Offset | Selects data inside the block           |
 
 ---
