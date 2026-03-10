@@ -43,11 +43,8 @@ For example, if there are **8 cache blocks**, then **8 tag comparisons** must be
 # Disadvantages
 
 - Requires **many comparators**
-    
 - Needs a **large multiplexer**
-    
 - More complex and expensive hardware
-    
 
 ---
 
