@@ -13,6 +13,28 @@ Cache Line=(Memory Block Number)\ mod\ (Number of Cache Lines)
 $$
 
 ---
+# Organization of Direct Mapped Cache
+
+For a direct mapped cache:
+
+$$
+S=B
+$$
+Where
+- **S** = Number of sets
+- **B** = Number of cache blocks
+
+Each set contains **one block**.
+
+Example from the notes:
+- Cache capacity = **8 words**
+- Block size = **1 word**
+    
+B=C/b=8/1=8B = C/b = 8/1 = 8B=C/b=8/1=8
+
+So the cache has **8 sets**, each containing **one word**.
+
+---
 
 # Structure of Address in Direct Mapping
 
@@ -36,6 +58,12 @@ Example format:
 | Index  | Selects cache set                       |
 | Offset | Selects data inside the block           |
 
+Each cache set stores :
+- **Data**
+- **Tag**
+- **Valid bit**
+	- Valid = 1 → data is valid
+	- Valid = 0 → entry is empty
 ---
 
 # Working of Direct Mapping
