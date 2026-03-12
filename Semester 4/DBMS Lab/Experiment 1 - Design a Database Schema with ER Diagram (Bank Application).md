@@ -1,3 +1,4 @@
+
 # 1. Aim of the Experiment
 
 To **design a database schema and ER diagram for a bank management system** based on a given problem description.
@@ -294,7 +295,9 @@ Purpose:
 
 Handles **many-to-many relationship** between:
 
+$$
 Customer ↔ Loan
+$$
 
 Example:
 
@@ -484,3 +487,7 @@ Yes, unless it is defined with a **NOT NULL constraint**.
 
 Answer:  
 It may cause **referential integrity violation** unless cascading rules are used.
+
+
+
+[[Programs]]
