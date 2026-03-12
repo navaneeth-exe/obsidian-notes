@@ -326,9 +326,11 @@ User now has **full access** to Employees table.
 
 # Revoke Privileges
 
+```
 REVOKE INSERT  
 ON Exp_7.Employees  
 FROM 'test'@'localhost';
+```
 
 Removes INSERT permission.
 
@@ -336,8 +338,10 @@ Removes INSERT permission.
 
 # Remove All Privileges
 
+```
 REVOKE ALL PRIVILEGES, GRANT OPTION  
 FROM 'test'@'localhost';
+```
 
 Removes every permission.
 
@@ -345,7 +349,9 @@ Removes every permission.
 
 # Delete User
 
+```
 DROP USER 'test'@'localhost';
+```
 
 Deletes user from database.
 
