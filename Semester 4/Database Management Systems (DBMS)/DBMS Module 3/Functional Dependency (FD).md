@@ -38,7 +38,7 @@ Explanation:
 So **Student_ID functionally determines Name and Department**.
 
 
-![[WhatsApp Image 2026-03-07 at 12.47.03 PM.jpeg]]
+![[WhatsApp Image 2026-03-07 at 12.47.03 PM 1.jpeg]]
 
 ---
 ### [[Types of Functional Dependencies]]
