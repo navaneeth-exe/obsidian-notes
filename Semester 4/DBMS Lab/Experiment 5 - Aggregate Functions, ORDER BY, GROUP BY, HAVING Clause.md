@@ -243,9 +243,11 @@ Output example:
 
 ### Descending Order
 
+```
 SELECT name, department  
 FROM Student  
 ORDER BY name DESC;
+```
 
 Explanation:
 
@@ -272,9 +274,11 @@ Used to **group rows having the same values**.
 
 Example:
 
+```
 SELECT department, COUNT(student_id) AS total_students  
 FROM Student  
 GROUP BY department;
+```
 
 Explanation:
 
@@ -292,10 +296,12 @@ Output:
 
 # Average Marks per Department
 
+```
 SELECT department, AVG(marks) AS average_marks  
 FROM Student  
 GROUP BY department;
 
+```
 Explanation:
 
 Calculates **average marks per department**.
@@ -320,10 +326,12 @@ It is similar to WHERE but used **after GROUP BY**.
 
 ### Example
 
+```
 SELECT department, COUNT(student_id) AS total_students  
 FROM Student  
 GROUP BY department  
 HAVING COUNT(student_id) > 2;
+```
 
 Explanation:
 
@@ -339,10 +347,12 @@ Output:
 
 ### Another Example
 
+```
 SELECT department, AVG(marks) AS average_marks  
 FROM Student  
 GROUP BY department  
 HAVING AVG(marks) > 80;
+```
 
 Output:
 
