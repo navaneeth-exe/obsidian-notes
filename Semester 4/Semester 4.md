@@ -4,3 +4,5 @@
 - [[Computer Architecture and Organization]]
 - [[Database Management Systems]]
 - [[Operating Systems]]
+- [[DBMS Lab]]
+- 
