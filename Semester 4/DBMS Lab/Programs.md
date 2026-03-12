@@ -1,1 +1,0 @@
-[[Experiment 1 - Design a Database Schema with ER Diagram (Bank Application)]]
