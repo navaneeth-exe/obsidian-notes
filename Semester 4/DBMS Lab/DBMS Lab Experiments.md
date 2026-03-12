@@ -7,3 +7,4 @@
 [[Experiment 4 - DML Commands (Data Manipulation Language)]]
 [[Experiment 5 - Aggregate Functions, ORDER BY, GROUP BY, HAVING Clause]]
 [[Experiment 6 - Set Operators, Nested Queries and Join Queries]]
+[[Experiment 7 - TCL and DCL Commands]]
