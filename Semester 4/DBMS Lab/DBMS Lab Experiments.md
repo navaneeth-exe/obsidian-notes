@@ -6,3 +6,4 @@
 [[Experiment 3 - Database Initialization – Data Insert, Bulk Import, Export]]
 [[Experiment 4 - DML Commands (Data Manipulation Language)]]
 [[Experiment 5 - Aggregate Functions, ORDER BY, GROUP BY, HAVING Clause]]
+[[Experiment 6 - Set Operators, Nested Queries and Join Queries]]
