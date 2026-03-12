@@ -235,10 +235,12 @@ Marks must be within valid range.
 
 # Insert Valid Data
 
+```
 INSERT INTO student2 VALUES  
 (1, 'Amit', 19, 75),  
 (2, 'Riya', 18, 35),  
 (3, 'Karan', 20, 60);
+```
 
 Records inserted successfully.
 
@@ -246,8 +248,9 @@ Records inserted successfully.
 
 # Insert Invalid Data
 
+```
 INSERT INTO student2 VALUES (4, 'Neha', 19, 150);
-
+```
 Error occurs:
 
 Check constraint violated
@@ -262,7 +265,9 @@ Constraint prevents invalid data.
 
 # Display Data
 
+```
 SELECT * FROM student2;
+```
 
 Table contains only valid records.
 
@@ -334,7 +339,9 @@ CHECK constraint ensures that column values satisfy a specific condition.
 
 Example:
 
+```
 CHECK (marks BETWEEN 0 AND 100)
+```
 
 ---
 
@@ -364,7 +371,9 @@ Using DROP VIEW command.
 
 Example:
 
+```
 DROP VIEW passed_students;
+```
 
 ---
 
