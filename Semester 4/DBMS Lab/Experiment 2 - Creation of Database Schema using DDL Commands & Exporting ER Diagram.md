@@ -50,7 +50,9 @@ DDL commands affect **database structure**, not just the data.
 
 # Step 1: Create Database
 
+```
 create database testdb;
+```
 
 Explanation:
 
@@ -66,7 +68,9 @@ A new database called **testdb** is created.
 
 # Step 2: Select the Database
 
+```
 use testdb;
+```
 
 Explanation:
 
@@ -81,12 +85,14 @@ After this command, all tables will be created inside **testdb**.
 
 # Step 3: Create Table
 
+```
 create table student (  
 stname varchar(30),  
 stid varchar(10),  
 stage int(2),  
 starea varchar(20)  
 );
+```
 
 Explanation:
 
@@ -114,7 +120,9 @@ Datatype explanation:
 
 # Step 4: Describe Table Structure
 
+```
 desc student;
+```
 
 Explanation:
 
@@ -169,7 +177,9 @@ stage INT(5)
 
 # Step 6: Drop Column
 
+```
 alter table student drop stdept;
+```
 
 Explanation:
 
@@ -185,7 +195,9 @@ If column doesn't exist, it will give an error.
 
 # Step 7: Clear Table Data
 
+```
 truncate table student;
+```
 
 Explanation:
 
@@ -206,7 +218,9 @@ Difference from DELETE:
 
 # Step 8: Rename Table
 
+```
 ALTER TABLE student RENAME TO students;
+```
 
 Explanation:
 
@@ -218,7 +232,9 @@ student → students
 
 # Step 9: Delete Table
 
+```
 drop table student;
+```
 
 Explanation:
 
@@ -231,13 +247,17 @@ After dropping, table no longer exists.
 
 Example error after drop:
 
+```
 ERROR 1146: Table doesn't exist
+```
 
 ---
 
 # Step 10: Delete Database
 
+```
 DROP DATABASE databasename;
+```
 
 Explanation:
 
@@ -249,25 +269,6 @@ Explanation:
 Example:
 
 DROP DATABASE testdb;
-
----
-
-# 5️⃣ ER Diagram Export
-
-In tools like **MySQL Workbench**:
-
-Steps:
-
-Database → Reverse Engineer → Select Database → Next → Finish
-
-This generates an **ER diagram automatically from tables**.
-
-Purpose:
-
-- Visualize database structure
-    
-- Show relationships between tables
-    
 
 ---
 
