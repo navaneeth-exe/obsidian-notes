@@ -4,3 +4,4 @@ Subject: [[Advanced Data Structures (ADS)]]
   
 - [[🌳TRIE DATA STRUCTURE (Prefix Tree)]]
 - [[R - Tree]]
+- [[K-d Tree (k-dimensional tree)]]
