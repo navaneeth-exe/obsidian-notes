@@ -489,5 +489,7 @@ Answer:
 It may cause **referential integrity violation** unless cascading rules are used.
 
 
+---
+
 
 [[DBMS Lab Experiments]]

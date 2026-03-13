@@ -114,7 +114,7 @@ Similar to C-SCAN but the head **moves only up to the last request before jumpin
 - Implementation complexity
 
 
-## Comparison of Disk Scheduling Algorithms
+## Comparison of Disk Scheduling Algorithms 
 
 | Algorithm                           | Basic Idea                                                          | Head Movement | Starvation | Performance              |
 | ----------------------------------- | ------------------------------------------------------------------- | ------------- | ---------- | ------------------------ |
