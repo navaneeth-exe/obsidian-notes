@@ -314,6 +314,20 @@ So it goes to the **left of (13,15)**.
 ## Space Partitioning
 
 
+All 7 points will be plotted in the X-Y plane as follows:
+
+1. Point (3, 6) will divide the space into two parts: Draw line X = 3.![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ktree_2.png "Click to enlarge")
+2. Point (2, 7) will divide the space to the left of line X = 3 into two parts horizontally. Draw line Y = 7 to the left of line X = 3.![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ktree_3.png "Click to enlarge")
+3. Point (17, 15) will divide the space to the right of line X = 3 into two parts horizontally. Draw line Y = 15 to the right of line X = 3.  
+     ![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ktree_4.png "Click to enlarge")
+4. Point (6, 12) will divide the space below line Y = 15 and to the right of line X = 3 into two parts. Draw line X = 6 to the right of line X = 3 and below line Y = 15.  
+     ![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ktree_5.png "Click to enlarge")
+5. Point (13, 15) will divide the space below line Y = 15 and to the right of line X = 6 into two parts. Draw line X = 13 to the right of line X = 6 and below line Y = 15.  
+     ![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ktree_6.png "Click to enlarge")
+6. Point (9, 1) will divide the space between lines X = 3, X = 6 and Y = 15 into two parts. Draw line Y = 1 between lines X = 3 and X = 13.  
+     ![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ktree_7.png "Click to enlarge")
+7. Point (10, 19) will divide the space to the right of line X = 3 and above line Y = 15 into two parts. Draw line Y = 19 to the right of line X = 3 and above line Y = 15.  
+     ![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ktree_8.png "Click to enlarge")
 
 
 ---
