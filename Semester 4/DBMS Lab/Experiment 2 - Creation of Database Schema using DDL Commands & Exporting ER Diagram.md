@@ -155,7 +155,7 @@ Example output:
 
 # Step 5: Modify Table Column
 
-alter table student modify stage int(5);
+`alter table student modify stage int(5);`
 
 Explanation:
 
