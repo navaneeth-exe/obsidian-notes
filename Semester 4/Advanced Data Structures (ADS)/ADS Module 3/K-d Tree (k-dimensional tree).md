@@ -97,7 +97,7 @@ Points:
 ```
 
 Construction:
-``
+
 ```
            (30,40)   ← split by x  
           /       \  
