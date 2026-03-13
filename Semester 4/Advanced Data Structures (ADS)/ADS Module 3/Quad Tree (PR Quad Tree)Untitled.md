@@ -163,6 +163,8 @@ The 2D space is divided like this:
 
 This creates the **hierarchical grid shown in the diagram**.
 
+[![Example of a PR quadtree](https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/_images/PRexamp.png)](https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/_images/PRexamp.png)
+
 ---
 
 # Time Complexity
