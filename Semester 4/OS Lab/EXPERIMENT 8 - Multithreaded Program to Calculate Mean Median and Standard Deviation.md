@@ -161,6 +161,7 @@ pthread_join(tid1, NULL);
 
 # ⚙️ CODE (PDF BASED FINAL)
 
+```
 #include <stdio.h>  
 #include <stdlib.h>  
 #include <pthread.h>  
@@ -255,6 +256,7 @@ int main(int argc, char *argv[])
   
     return 0;  
 }
+```
 
 ---
 
@@ -279,11 +281,13 @@ int main(int argc, char *argv[])
 
 # 📤 OUTPUT
 
+```
 ./exp8 10 20 30 40 50  
   
 Mean = 30.00  
 Median = 30.00  
 Standard Deviation = 14.14
+```
 
 ---
 
