@@ -1,10 +1,12 @@
 # 🎯 AIM
 
-Write a multithreaded program that calculates the **mean, median, and standard deviation** of a list of integers using three separate threads.
+Write a multithreaded program that calculates the **mean, median, and standard deviation** of a list of integers using command-line arguments and three worker threads.
 
 ---
 
-# 🧠 THEORY (EXPLANATION)
+# 🧠 THEORY (COMPLETE + MERGED)
+
+---
 
 ### 🔹 What is a Thread?
 
@@ -22,13 +24,15 @@ Write a multithreaded program that calculates the **mean, median, and standard d
 
 ---
 
-### 🔹 Why Multithreading?
+### 🔹 What is Multithreading?
 
+- Execution of multiple threads simultaneously
+    
 - Improves performance
     
 - Allows parallel execution
     
-- Efficient use of CPU
+- Efficient CPU utilization
     
 
 ---
@@ -42,52 +46,19 @@ Write a multithreaded program that calculates the **mean, median, and standard d
 
 ---
 
-### 🔹 Functions Used
+### 🔹 Thread Functions Used
 
 |Function|Purpose|
 |---|---|
-|`pthread_create()`|Create thread|
-|`pthread_join()`|Wait for thread|
-|`pthread_exit()`|Terminate thread|
+|`pthread_create()`|Creates a thread|
+|`pthread_join()`|Waits for thread completion|
+|`pthread_exit()`|Terminates thread|
 
 ---
 
-### 🔹 Statistical Concepts
+### 🔹 Concept Used in This Program (IMPORTANT)
 
-#### ✅ Mean
-
-Mean=∑xin\text{Mean} = \frac{\sum x_i}{n}Mean=n∑xi​​
-
----
-
-#### ✅ Median
-
-- Middle value after sorting
-    
-- Even → average of two middle values
-    
-- Odd → middle element
-    
-
----
-
-#### ✅ Standard Deviation
-
-σ=∑(xi−μ)2n\sigma = \sqrt{\frac{\sum (x_i - \mu)^2}{n}}σ=n∑(xi​−μ)2​​
-
----
-
-# ⚙️ ALGORITHM
-
-1. Start
-    
-2. Read number of elements
-    
-3. Store elements in array
-    
-4. Declare global variables (mean, median, stddev)
-    
-5. Create 3 threads:
+- Three threads are created:
     
     - Thread 1 → Mean
         
@@ -95,142 +66,221 @@ Mean=∑xin\text{Mean} = \frac{\sum x_i}{n}Mean=n∑xi​​
         
     - Thread 3 → Standard Deviation
         
-6. Wait for all threads using `pthread_join()`
+- Values are stored in **global variables**:
     
-7. Print results
-    
-8. End
+    - `mean`
+        
+    - `median`
+        
+    - `stddev`
+        
+- Input is taken using **command-line arguments** (as per AIM)
     
 
 ---
 
-# ⚙️ CODE (CORRECTED + CLEAN)
+### 🔹 Statistical Concepts
 
-#include<stdio.h>  
-#include<stdlib.h>  
-#include<pthread.h>  
-#include<math.h>  
+#### ✅ Mean
+
+$$
+Mean=∑xin\text{Mean} = \frac{\sum x_i}{n}​​
+$$
+
+---
+
+#### ✅ Median
+
+- Middle value after sorting
+    
+- If odd → middle element
+    
+- If even → average of two middle elements
+    
+
+---
+
+#### ✅ Standard Deviation
+
+$$
+σ=∑(xi−μ)2n\sigma = \sqrt{\frac{\sum (x_i - \mu)^2}{n}}​​
+$$
+
+---
+
+### 🔹 Important Concept from PDF (VERY IMPORTANT)
+
+👉 From page 4 of your PDF:
+
+- Mean thread is executed **first and joined before stddev**
+    
+
+✔ This avoids incorrect calculation
+
+---
+
+### 🔹 Synchronization Concept
+
+- Standard deviation depends on mean
+    
+- So we must ensure:
+    
+
+Mean → calculated first → then Std Dev
+
+👉 Done using:
+
+pthread_join(tid1, NULL);
+
+---
+
+# ⚙️ ALGORITHM
+
+1. Start
+    
+2. Read command-line arguments
+    
+3. Store values in array
+    
+4. Create thread for mean
+    
+5. Wait for mean thread
+    
+6. Create thread for median
+    
+7. Create thread for std deviation
+    
+8. Wait for threads
+    
+9. Print results
+    
+10. End
+    
+
+---
+
+# ⚙️ CODE (PDF BASED FINAL)
+
+#include <stdio.h>  
+#include <stdlib.h>  
+#include <pthread.h>  
+#include <math.h>  
   
-double mean, median, stddev;  
-int *numbers;  
-int count;  
+#define MAX 100  
   
-void *calculate_mean(void *arg);  
-void *calculate_median(void *arg);  
-void *calculate_stddev(void *arg);  
+int numbers[MAX];  
+int n;  
   
-int compare_ints(const void *a, const void *b)  
+double mean;  
+double median;  
+double stddev;  
+  
+void* calculate_mean(void* arg)  
 {  
-    return (*(int *)a - *(int *)b);  
+    int sum = 0;  
+    for(int i = 0; i < n; i++)  
+        sum += numbers[i];  
+  
+    mean = (double)sum / n;  
+    pthread_exit(0);  
 }  
   
-int main()  
+void* calculate_median(void* arg)  
 {  
-    printf("Enter the number of elements: ");  
-    scanf("%d", &count);  
+    int temp[MAX];  
   
-    if(count <= 0)  
+    for(int i = 0; i < n; i++)  
+        temp[i] = numbers[i];  
+  
+    for(int i = 0; i < n - 1; i++)  
     {  
-        printf("Invalid input\n");  
+        for(int j = i + 1; j < n; j++)  
+        {  
+            if(temp[i] > temp[j])  
+            {  
+                int t = temp[i];  
+                temp[i] = temp[j];  
+                temp[j] = t;  
+            }  
+        }  
+    }  
+  
+    if(n % 2 == 0)  
+        median = (temp[n/2] + temp[n/2 - 1]) / 2.0;  
+    else  
+        median = temp[n/2];  
+  
+    pthread_exit(0);  
+}  
+  
+void* calculate_stddev(void* arg)  
+{  
+    double sum = 0;  
+  
+    for(int i = 0; i < n; i++)  
+        sum += pow(numbers[i] - mean, 2);  
+  
+    stddev = sqrt(sum / n);  
+  
+    pthread_exit(0);  
+}  
+  
+int main(int argc, char *argv[])  
+{  
+    pthread_t tid1, tid2, tid3;  
+  
+    if(argc < 2)  
+    {  
+        printf("Usage: %s number1 number2 ...\n", argv[0]);  
         return 1;  
     }  
   
-    numbers = malloc(count * sizeof(int));  
+    n = argc - 1;  
   
-    printf("Enter numbers:\n");  
-    for(int i = 0; i < count; i++)  
-    {  
-        scanf("%d", &numbers[i]);  
-    }  
+    for(int i = 0; i < n; i++)  
+        numbers[i] = atoi(argv[i+1]);  
   
-    pthread_t t1, t2, t3;  
+    pthread_create(&tid1, NULL, calculate_mean, NULL);  
+    pthread_join(tid1, NULL);  
   
-    pthread_create(&t1, NULL, calculate_mean, NULL);  
-    pthread_create(&t2, NULL, calculate_median, NULL);  
-    pthread_create(&t3, NULL, calculate_stddev, NULL);  
+    pthread_create(&tid2, NULL, calculate_median, NULL);  
+    pthread_create(&tid3, NULL, calculate_stddev, NULL);  
   
-    pthread_join(t1, NULL);  
-    pthread_join(t2, NULL);  
-    pthread_join(t3, NULL);  
+    pthread_join(tid2, NULL);  
+    pthread_join(tid3, NULL);  
   
-    printf("\nResults:\n");  
     printf("Mean = %.2f\n", mean);  
     printf("Median = %.2f\n", median);  
     printf("Standard Deviation = %.2f\n", stddev);  
   
-    free(numbers);  
     return 0;  
-}  
-  
-void *calculate_mean(void *arg)  
-{  
-    double sum = 0;  
-    for(int i = 0; i < count; i++)  
-        sum += numbers[i];  
-  
-    mean = sum / count;  
-    pthread_exit(0);  
-}  
-  
-void *calculate_median(void *arg)  
-{  
-    int *temp = malloc(count * sizeof(int));  
-  
-    for(int i = 0; i < count; i++)  
-        temp[i] = numbers[i];  
-  
-    qsort(temp, count, sizeof(int), compare_ints);  
-  
-    if(count % 2 == 0)  
-        median = (temp[count/2] + temp[count/2 - 1]) / 2.0;  
-    else  
-        median = temp[count/2];  
-  
-    free(temp);  
-    pthread_exit(0);  
-}  
-  
-void *calculate_stddev(void *arg)  
-{  
-    double sum = 0;  
-  
-    for(int i = 0; i < count; i++)  
-        sum += pow(numbers[i] - mean, 2);  
-  
-    stddev = sqrt(sum / count);  
-    pthread_exit(0);  
 }
 
 ---
 
-# 🔄 WORKING (STEP-BY-STEP)
+# 🔄 WORKING
 
-1. User inputs numbers
+1. Input taken from command line
     
-2. Three threads are created simultaneously
+2. Values stored in array
     
-3. Each thread performs:
+3. Mean thread executes first
     
-    - Mean thread → calculates average
-        
-    - Median thread → sorts and finds middle
-        
-    - Stddev thread → uses mean to calculate deviation
-        
-4. Main thread waits using `pthread_join()`
+4. Main waits → ensures mean is ready
     
-5. Results are printed
+5. Median and stddev threads run
+    
+6. Main waits again
+    
+7. Final results printed
     
 
 ---
 
-# 📤 OUTPUT (Example)
+# 📤 OUTPUT
 
-Enter the number of elements: 5  
-Enter numbers:  
-10 20 30 40 50  
+./exp8 10 20 30 40 50  
   
-Results:  
 Mean = 30.00  
 Median = 30.00  
 Standard Deviation = 14.14
@@ -239,37 +289,33 @@ Standard Deviation = 14.14
 
 # 🧾 RESULT
 
-The program was successfully executed using multithreading to compute mean, median, and standard deviation.
+The program was successfully executed using multithreading and command-line arguments to compute mean, median, and standard deviation.
 
 ---
 
-# ⚠️ IMPORTANT NOTE (EXAM TRAP)
+# ⚠️ IMPORTANT NOTE (VERY IMPORTANT FOR VIVA)
 
-👉 Standard deviation thread uses `mean`  
-👉 But threads run **parallel**
+👉 Without synchronization:
 
-💀 So technically:
-
-- Stddev may run before mean is ready
+- Stddev may use wrong mean
     
 
-👉 In real systems → use synchronization (mutex)  
-👉 In lab → they ignore this
+👉 In THIS program:  
+✔ Fixed using `pthread_join()`
 
 ---
 
 # ⚡ IMPORTANT POINTS
 
-- Threads share global variables
+- Uses command-line arguments
     
-- `pthread_create()` creates threads
+- Uses global variables
     
-- `pthread_join()` ensures completion
+- Uses 3 threads
     
-- Multithreading improves performance
+- Uses synchronization
     
-- Data dependency can cause issues
-    
+- Avoids race condition
 
 ---
 
