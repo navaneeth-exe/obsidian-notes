@@ -149,6 +149,7 @@ Sum = 30
 
 ## 🔹 Code
 
+```
 #include<stdio.h>  
 #include<unistd.h>  
 #include<sys/types.h>  
@@ -188,7 +189,7 @@ int main()
   
     return 0;  
 }
-
+```
 ---
 
 # 🔄 WORKING (STEP-BY-STEP)
@@ -222,10 +223,12 @@ int main()
 
 # 📤 OUTPUT
 
+```
 Parent Process (PID: 1234), Child PID: 1235  
 Child Process (PID: 1235)  
 Sum = 30  
 Child process finished.
+```
 
 ---
 
