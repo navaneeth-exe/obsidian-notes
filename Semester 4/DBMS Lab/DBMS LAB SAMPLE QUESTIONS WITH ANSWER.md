@@ -229,9 +229,11 @@ Display employee details department-wise in ascending order of salary.
 
 **Answer:**
 
+```
 SELECT *  
 FROM Employee  
 ORDER BY DeptId, Salary ASC;
+```
 
 👉 First Dept → then Salary inside it
 
@@ -244,9 +246,11 @@ Display all clerks in DeptId D2.
 
 **Answer:**
 
+```
 SELECT *  
 FROM Employee  
 WHERE Designation = 'Clerk' AND DeptId = 'D2';
+```
 
 👉 Uses `AND` condition
 
@@ -259,10 +263,11 @@ Display employees who joined in the year 2011.
 
 **Answer:**
 
+```
 SELECT *  
 FROM Employee  
 WHERE YEAR(DOJ) = 2011;
-
+```
 👉 Extract year from date
 
 ---
@@ -276,3 +281,8 @@ WHERE YEAR(DOJ) = 2011;
 - ORDER BY multiple → Q5
 - AND condition → Q6
 - YEAR() → Q7
+
+---
+
+
+
