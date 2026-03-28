@@ -7,4 +7,5 @@
 9 . [[EXPERIMENT – 9 - Simulation of FCFS (First Come First Serve) CPU Scheduling Algorithm.]]
 11 . [[EXPERIMENT – 11 - Simulation of Banker’s Algorithm to determine a safe sequence and avoid deadlock.]]
 13 . [[EXPERIMENT – 13 - Deadlock-free solution to the Dining Philosophers Problem using Semaphores.]]
+15 . [[EXPERIMENT – 15 - Simulation of FIFO (First-In First-Out) Page Replacement Algorithm]]
 16 . [[EXPERIMENT – 16 - SSTF Disk Scheduling]] 
