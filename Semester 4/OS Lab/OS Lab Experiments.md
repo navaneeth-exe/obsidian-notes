@@ -6,4 +6,5 @@
 7. [[EXPERIMENT 8 - Multithreaded Program to Calculate Mean Median and Standard Deviation]]
 9 . [[EXPERIMENT – 9 - Simulation of FCFS (First Come First Serve) CPU Scheduling Algorithm.]]
 11 . [[EXPERIMENT – 11 - Simulation of Banker’s Algorithm to determine a safe sequence and avoid deadlock.]]
+13 . [[EXPERIMENT – 13 - Deadlock-free solution to the Dining Philosophers Problem using Semaphores.]]
 16 . [[EXPERIMENT – 16 - SSTF Disk Scheduling]] 
