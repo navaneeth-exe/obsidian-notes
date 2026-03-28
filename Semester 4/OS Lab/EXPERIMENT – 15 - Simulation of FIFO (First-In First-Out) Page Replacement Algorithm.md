@@ -255,7 +255,6 @@ for (int j = 0; j < frames; j++) {
 
 ```
 if (!found)
-
 ```
 👉 Page not in memory
 
@@ -263,7 +262,9 @@ if (!found)
 
 ## 🔄 **REPLACE PAGE (FIFO LOGIC)**
 
+```
 fr[k] = pages[i];
+```
 
 👉 Replace the **oldest page**
 
@@ -271,13 +272,15 @@ fr[k] = pages[i];
 
 ## 🔁 **UPDATE POINTER**
 
+```
 k = (k + 1) % frames;
+```
 
 👉 Circular movement
 
 ### Example:
 
-frames = 3  
+`frames = 3  `
   
 k = 0 → 1 → 2 → 0 → 1 → ...
 
@@ -287,14 +290,17 @@ k = 0 → 1 → 2 → 0 → 1 → ...
 
 ## 🔺 **INCREMENT FAULT**
 
+```
 pageFaults++;
+```
 
 ---
 
 # 🔚 **RETURN RESULT**
 
+```
 return pageFaults;
-
+```
 ---
 
 # 🚀 **MAIN FUNCTION**
@@ -303,18 +309,24 @@ return pageFaults;
 
 ## 🔹 **COMMAND LINE CHECK**
 
+```
 if (argc != 3)
+```
 
 👉 Expect:
 
+```
 ./program 10 3
+```
 
 ---
 
 ## 🔹 **READ INPUT**
 
+```
 int n = atoi(argv[1]);  
 int frames = atoi(argv[2]);
+```
 
 👉 Convert string → integer
 
@@ -322,7 +334,9 @@ int frames = atoi(argv[2]);
 
 ## 🔹 **VALIDATION**
 
+```
 if (n <= 0 || n > MAX_PAGES || frames < 1 || frames > 7)
+```
 
 👉 Ensures valid input
 
@@ -330,21 +344,26 @@ if (n <= 0 || n > MAX_PAGES || frames < 1 || frames > 7)
 
 # 🔹 **RANDOM PAGE GENERATION**
 
+```
 pages[i] = rand() % 10;
-
+```
 👉 Generates numbers from 0–9
 
 ---
 
 ## 🔹 **DISPLAY PAGES**
 
+```
 printf("%d ", pages[i]);
+```
 
 ---
 
 # 🔹 **CALL FIFO FUNCTION**
 
+```
 int faults = fifo(pages, n, frames);
+```
 
 👉 Executes algorithm
 
@@ -352,7 +371,9 @@ int faults = fifo(pages, n, frames);
 
 # 🔹 **OUTPUT**
 
+```
 printf("Total page faults: %d\n", faults);
+```
 
 ---
 
@@ -360,15 +381,19 @@ printf("Total page faults: %d\n", faults);
 
 Example:
 
+```
 Frames = 3  
 Pages = 1 2 3 4
+```
 
 ### Steps:
 
+```
 1. 1 → fault → [1 _ _]
 2. 2 → fault → [1 2 _]
 3. 3 → fault → [1 2 3]
 4. 4 → replace 1 → [4 2 3]
+```
 
 👉 Oldest removed first
 ---
