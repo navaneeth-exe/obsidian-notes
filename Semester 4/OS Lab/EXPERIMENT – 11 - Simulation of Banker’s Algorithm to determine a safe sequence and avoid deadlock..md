@@ -247,7 +247,6 @@ int work[10];
 ```
 scanf("%d", &n);  
 scanf("%d", &m);
-
 ```
 👉 Input number of processes and resources
 
@@ -368,18 +367,24 @@ flag = 1;
 
 ## ✅ **IF PROCESS CAN EXECUTE**
 
+```
 if (flag == 0)
+```
 
 👉 Means:
 
+```
 Need <= Work
-
+```
+`
 ---
 
 # 🔄 **RESOURCE ALLOCATION (SIMULATION)**
 
+```
 for (k = 0; k < m; k++)  
     work[k] += alloc[i][k];
+```
 
 👉 What happens:
 
@@ -388,9 +393,7 @@ for (k = 0; k < m; k++)
 - Resources added back to `work`
 
 💡 Example:
-
-Work = [3,2,1]  
-Alloc = [1,0,2]  
+``
   
 New Work = [4,2,3]
 
@@ -398,9 +401,11 @@ New Work = [4,2,3]
 
 ## 🔹 UPDATE STATE
 
+```
 safeSeq[count++] = i;  
 finish[i] = 1;  
 found = 1;
+```
 
 - Add process to safe sequence
 - Mark as completed
@@ -410,12 +415,16 @@ found = 1;
 
 # 🚨 **UNSAFE STATE CHECK**
 
+```
 if (!found)
+```
 
 👉 If no process can execute:
 
+```
 printf("System is NOT in a safe state");
 
+```
 💀 Meaning:
 
 > Deadlock may occur
@@ -424,8 +433,61 @@ printf("System is NOT in a safe state");
 
 # 🧾 **SAFE STATE OUTPUT**
 
+```
 printf("Safe Sequence: < ");
 
 printf("P%d ", safeSeq[i]);
+```
 
 👉 Displays execution order
+
+---
+## ✅ **RESULT**
+
+The Banker’s Algorithm was successfully implemented and the system was verified to be in a safe state with a valid safe sequence.
+
+---
+
+# 🔥 **VIVA QUESTIONS**
+
+## 🧠 Basic
+
+1. What is Banker’s Algorithm?  
+    👉 Deadlock avoidance algorithm
+2. What is safe state?  
+    👉 All processes can complete
+
+---
+
+## ⚙️ Conceptual
+
+3. What is Need matrix?  
+    👉 Remaining resource requirement
+4. Formula for Need?  
+    👉 Need = Max – Allocation
+
+---
+
+## 🧮 Technical
+
+5. What is Work variable?  
+    👉 Copy of available resources
+6. What is Finish array?  
+    👉 Tracks completed processes
+
+---
+
+## 💀 Advanced
+
+7. What is unsafe state?  
+    👉 No safe sequence exists
+8. Does unsafe always mean deadlock?  
+    👉 No, but deadlock is possible
+9. Time complexity?  
+    👉 O(n² × m)
+
+---
+
+## 🧠 PRO LINE 😎
+
+> “Banker’s algorithm checks for safe allocation by ensuring all processes can complete without causing deadlock.”
