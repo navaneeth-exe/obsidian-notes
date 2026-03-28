@@ -256,7 +256,9 @@ count++;
 
 ## 🔚 **RETURN TOTAL MOVEMENT**
 
+```
 return total;
+```
 
 ---
 
@@ -266,7 +268,9 @@ return total;
 
 ## 🔹 RANDOM SEED
 
+```
 srand(time(NULL));
+```
 
 👉 Ensures different random numbers every run
 
@@ -274,33 +278,42 @@ srand(time(NULL));
 
 ## 🔹 INPUT HEAD POSITION
 
+```
 scanf("%d", &head);
+```
 
 ---
 
 ## 🔹 ARRAY DECLARATION
 
+```
 int requests[REQUESTS];
+```
 
 ---
 
 ## 🔹 GENERATE RANDOM REQUESTS
 
+```
 requests[i] = rand() % (MAX_CYLINDER + 1);
+```
 
 👉 Generates values between **0 and 4999**
 
 ---
 
 ## 🔹 PRINT REQUESTS
-
+```
 printf("%d ", requests[i]);
+```
 
 ---
 
 ## 🔹 CALL SSTF FUNCTION
 
+```
 int total = sstf(head, requests, REQUESTS);
+```
 
 👉 Calculates total head movement
 
@@ -308,16 +321,20 @@ int total = sstf(head, requests, REQUESTS);
 
 ## 🔹 OUTPUT
 
+```
 printf("Total head movement (SSTF): %d\n", total);
+```
 
 ---
 
 # 🔥 **HOW THE ALGORITHM WORKS (SIMPLE FLOW)**
 
+```
 Example:
 
 Head = 100  
 Requests = [120, 80, 200]
+```
 
 ### Steps:
 
