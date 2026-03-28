@@ -43,3 +43,72 @@ SSTF (Shortest Seek Time First) selects the disk request that is **closest to th
 **Step 6:** Print total head movement
 
 **Step 7:** Stop
+
+---
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
+
+#define MAX_CYLINDER 4999
+#define REQUESTS 10
+
+// Function to find absolute difference
+int abs_diff(int a, int b) {
+    return abs(a - b);
+}
+
+// SSTF algorithm
+int sstf(int head, int req[], int n) {
+    int visited[REQUESTS] = {0}; // track serviced requests
+    int total = 0, count = 0;
+    int cur = head; // current head position
+
+    while (count < n) {
+        int min = 999999, idx = -1;
+
+        // find nearest request
+        for (int i = 0; i < n; i++) {
+            if (!visited[i]) {
+                int d = abs_diff(cur, req[i]);
+                if (d < min) {
+                    min = d;
+                    idx = i;
+                }
+            }
+        }
+
+        visited[idx] = 1; // mark visited
+        total += abs_diff(cur, req[idx]); // add movement
+        cur = req[idx]; // move head
+        count++;
+    }
+
+    return total;
+}
+
+int main() {
+    srand(time(NULL)); // random generator
+
+    int head;
+    printf("Enter initial head position (0–4999): ");
+    scanf("%d", &head);
+
+    int requests[REQUESTS];
+
+    // generate random requests
+    printf("\nGenerated requests:\n");
+    for (int i = 0; i < REQUESTS; i++) {
+        requests[i] = rand() % (MAX_CYLINDER + 1);
+        printf("%d ", requests[i]);
+    }
+    printf("\n");
+
+    int total = sstf(head, requests, REQUESTS);
+
+    printf("\nTotal head movement (SSTF): %d\n", total);
+
+    return 0;
+}
+```
