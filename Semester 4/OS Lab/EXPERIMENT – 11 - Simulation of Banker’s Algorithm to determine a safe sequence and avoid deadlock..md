@@ -445,6 +445,7 @@ printf("P%d ", safeSeq[i]);
 
 # 📤 **EXAMPLE INPUT**
 
+```
 Enter the number of processes: 5  
 Enter the number of resource types: 3  
   
@@ -464,24 +465,29 @@ Enter the Max Matrix (5 x 3):
   
 Enter the Available Resources (vector of 3 values):  
 3 3 2
+```
 
 ---
 
 # 📊 **CALCULATED NEED MATRIX**
 
+```
 Need Matrix:  
  7  4  3  
  1  2  2  
  6  0  0  
  0  1  1  
  4  3  1
+```
 
 ---
 
 # ✅ **OUTPUT**
 
+```
 System is in a SAFE STATE.  
 Safe Sequence: < P1 P3 P4 P0 P2 >
+```
 
 ---
 ## ✅ **RESULT**
