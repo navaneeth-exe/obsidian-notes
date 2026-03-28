@@ -116,6 +116,217 @@ int main() {
 
 ---
 
+# **FULL CODE EXPLANATION – SSTF**
+
+---
+
+## 🔹 **HEADER FILES**
+
+```
+#include <stdio.h>  
+#include <stdlib.h>  
+#include <math.h>  
+#include <time.h>
+```
+
+- `stdio.h` → input/output (`printf`, `scanf`)
+- `stdlib.h` → `rand()`, `abs()`
+- `math.h` → math functions (not heavily used here)
+- `time.h` → for random seed (`time(NULL)`)
+
+---
+
+## 🔹 **MACROS**
+
+```
+#define MAX_CYLINDER 4999  
+#define REQUESTS 10
+```
+
+- Disk size → cylinders from **0 to 4999**
+- Number of disk requests → **10**
+
+---
+
+# ⚙️ **SSTF FUNCTION (CORE LOGIC)**
+
+```
+int sstf(int head, int req[], int n)
+```
+
+### Parameters:
+
+- `head` → initial head position
+- `req[]` → array of requests
+- `n` → number of requests
+
+---
+
+## 🔹 **VARIABLES**
+
+```
+int visited[REQUESTS] = {0};  
+int total = 0, count = 0;  
+int cur = head;
+```
+
+- `visited[]` → tracks which requests are completed
+- `total` → total head movement
+- `count` → number of completed requests
+- `cur` → current head position
+
+---
+
+## 🔁 **MAIN LOOP**
+
+```
+while (count < n)
+```
+
+👉 Loop runs until all requests are served
+
+---
+
+## 🔍 **FIND NEAREST REQUEST**
+
+```
+int min = 999999, idx = -1;
+```
+
+- `min` → stores smallest distance
+- `idx` → index of closest request
+
+---
+
+### 🔹 Loop through all requests:
+
+```
+for (int i = 0; i < n; i++)
+```
+
+---
+
+### 🔹 Check unvisited requests:
+
+```
+if (!visited[i])
+```
+👉 Only consider pending requests
+
+---
+
+### 🔹 Calculate distance:
+
+```
+int d = abs_diff(cur, req[i]);
+```
+
+---
+
+### 🔹 Find minimum:
+
+```
+if (d < min) {  
+    min = d;  
+    idx = i;  
+}
+```
+
+👉 Choose closest request → **SSTF logic**
+
+---
+
+## 🔄 **UPDATE VALUES**
+
+```
+visited[idx] = 1;  
+total += abs_diff(cur, req[idx]);  
+cur = req[idx];  
+count++;
+```
+
+### What happens:
+
+1. Mark request as done
+2. Add movement to total
+3. Move head
+4. Increase count
+
+---
+
+## 🔚 **RETURN TOTAL MOVEMENT**
+
+return total;
+
+---
+
+# 🧾 **MAIN FUNCTION**
+
+---
+
+## 🔹 RANDOM SEED
+
+srand(time(NULL));
+
+👉 Ensures different random numbers every run
+
+---
+
+## 🔹 INPUT HEAD POSITION
+
+scanf("%d", &head);
+
+---
+
+## 🔹 ARRAY DECLARATION
+
+int requests[REQUESTS];
+
+---
+
+## 🔹 GENERATE RANDOM REQUESTS
+
+requests[i] = rand() % (MAX_CYLINDER + 1);
+
+👉 Generates values between **0 and 4999**
+
+---
+
+## 🔹 PRINT REQUESTS
+
+printf("%d ", requests[i]);
+
+---
+
+## 🔹 CALL SSTF FUNCTION
+
+int total = sstf(head, requests, REQUESTS);
+
+👉 Calculates total head movement
+
+---
+
+## 🔹 OUTPUT
+
+printf("Total head movement (SSTF): %d\n", total);
+
+---
+
+# 🔥 **HOW THE ALGORITHM WORKS (SIMPLE FLOW)**
+
+Example:
+
+Head = 100  
+Requests = [120, 80, 200]
+
+### Steps:
+
+1. From 100 → nearest is 80 (distance 20)
+2. From 80 → nearest is 120 (distance 40)
+3. From 120 → nearest is 200 (distance 80)
+
+👉 Total = 20 + 40 + 80 = **140**
+---
 ## ✅ **RESULT**
 
 The SSTF disk scheduling algorithm was successfully implemented, and the total head movement was calculated.
