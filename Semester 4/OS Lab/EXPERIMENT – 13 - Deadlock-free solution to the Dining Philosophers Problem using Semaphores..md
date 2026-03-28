@@ -85,6 +85,7 @@ The Dining Philosophers problem is a classical synchronization problem.
 
 # 💻 **PROGRAM**
 
+```
 #include <stdio.h>  
 #include <stdlib.h>  
 #include <pthread.h>  
@@ -145,6 +146,7 @@ int main() {
   
     return 0;  
 }
+```
 
 ---
 
@@ -230,7 +232,9 @@ int id = *(int *)num;
 
 # 🔁 **INFINITE LOOP**
 
+```
 while (1)
+```
 
 👉 Philosophers continuously:
 
@@ -240,16 +244,19 @@ while (1)
 
 ## 🧠 **THINKING STATE**
 
+```
 printf("Philosopher %d is thinking\n", id);  
 sleep(1);
-
+```
 👉 Simulates thinking
 
 ---
 
 # 🚪 **ENTRY SECTION (CRITICAL PART)**
 
+```
 sem_wait(&mutex);
+```
 
 👉 This is the **deadlock prevention trick**
 
@@ -264,9 +271,10 @@ sem_wait(&mutex);
 
 # 🍴 **PICK UP CHOPSTICKS**
 
+```
 sem_wait(&chopstick[id]);  
 sem_wait(&chopstick[(id + 1) % N]);
-
+```
 ### Explanation:
 
 - Left chopstick → `id`
@@ -280,15 +288,19 @@ sem_wait(&chopstick[(id + 1) % N]);
 
 For philosopher 4:
 
+```
 Left = chopstick[4]  
 Right = chopstick[(4+1)%5] = chopstick[0]
+```
 
 ---
 
 # 🍽️ **EATING SECTION**
 
+```
 printf("Philosopher %d is eating\n", id);  
 sleep(2);
+```
 
 👉 Simulates eating
 
@@ -296,8 +308,10 @@ sleep(2);
 
 # 🔄 **PUT DOWN CHOPSTICKS**
 
+```
 sem_post(&chopstick[id]);  
 sem_post(&chopstick[(id + 1) % N]);
+```
 
 👉 Releases both chopsticks
 
@@ -305,16 +319,19 @@ sem_post(&chopstick[(id + 1) % N]);
 
 # 🚪 **EXIT SECTION**
 
+```
 sem_post(&mutex);
+```
 
 👉 Allows another philosopher to enter
 
 ---
 
 # 🔁 **BACK TO THINKING**
-
+```
 printf("Philosopher %d finished eating\n", id);  
 sleep(1);
+```
 
 ---
 
@@ -324,9 +341,10 @@ sleep(1);
 
 ## 🔹 **THREAD DECLARATION**
 
+```
 pthread_t tid[N];  
 int philosopher_id[N];
-
+```
 - `tid[]` → thread IDs
 - `philosopher_id[]` → store IDs
 
@@ -334,7 +352,9 @@ int philosopher_id[N];
 
 # 🔹 **INITIALIZE MUTEX**
 
+```
 sem_init(&mutex, 0, N - 1);
+```
 
 👉 Key logic:
 
@@ -346,7 +366,9 @@ sem_init(&mutex, 0, N - 1);
 
 # 🔹 **INITIALIZE CHOPSTICKS**
 
+```
 sem_init(&chopstick[i], 0, 1);
+```
 
 👉 Each chopstick = binary semaphore (1)
 
@@ -354,7 +376,9 @@ sem_init(&chopstick[i], 0, 1);
 
 # 🔹 **CREATE THREADS**
 
+```
 pthread_create(&tid[i], NULL, philosopher, &philosopher_id[i]);
+```
 
 👉 Creates philosopher threads
 
@@ -362,7 +386,9 @@ pthread_create(&tid[i], NULL, philosopher, &philosopher_id[i]);
 
 # 🔹 **JOIN THREADS**
 
+```
 pthread_join(tid[i], NULL);
+```
 
 👉 Keeps program running (threads never end)
 
@@ -370,8 +396,10 @@ pthread_join(tid[i], NULL);
 
 # 🔹 **DESTROY SEMAPHORES**
 
+```
 sem_destroy(&chopstick[i]);  
 sem_destroy(&mutex);
+```
 
 👉 Cleanup (not reached due to infinite loop)
 
