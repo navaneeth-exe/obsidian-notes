@@ -442,6 +442,48 @@ printf("P%d ", safeSeq[i]);
 👉 Displays execution order
 
 ---
+
+# 📤 **EXAMPLE INPUT**
+
+Enter the number of processes: 5  
+Enter the number of resource types: 3  
+  
+Enter the Allocation Matrix (5 x 3):  
+0 1 0  
+2 0 0  
+3 0 2  
+2 1 1  
+0 0 2  
+  
+Enter the Max Matrix (5 x 3):  
+7 5 3  
+3 2 2  
+9 0 2  
+2 2 2  
+4 3 3  
+  
+Enter the Available Resources (vector of 3 values):  
+3 3 2
+
+---
+
+# 📊 **CALCULATED NEED MATRIX**
+
+Need Matrix:  
+ 7  4  3  
+ 1  2  2  
+ 6  0  0  
+ 0  1  1  
+ 4  3  1
+
+---
+
+# ✅ **OUTPUT**
+
+System is in a SAFE STATE.  
+Safe Sequence: < P1 P3 P4 P0 P2 >
+
+---
 ## ✅ **RESULT**
 
 The Banker’s Algorithm was successfully implemented and the system was verified to be in a safe state with a valid safe sequence.
