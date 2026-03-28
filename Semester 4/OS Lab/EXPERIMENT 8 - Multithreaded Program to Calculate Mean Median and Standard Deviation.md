@@ -186,99 +186,113 @@ Step 10: Stop
 # ⚙️ CODE (PDF BASED FINAL)
 
 ```
-#include <stdio.h>  
-#include <stdlib.h>  
-#include <pthread.h>  
-#include <math.h>  
-  
-#define MAX 100  
-  
-int numbers[MAX];  
-int n;  
-  
-double mean;  
-double median;  
-double stddev;  
-  
-void* calculate_mean(void* arg)  
-{  
-    int sum = 0;  
-    for(int i = 0; i < n; i++)  
-        sum += numbers[i];  
-  
-    mean = (double)sum / n;  
-    pthread_exit(0);  
-}  
-  
-void* calculate_median(void* arg)  
-{  
-    int temp[MAX];  
-  
-    for(int i = 0; i < n; i++)  
-        temp[i] = numbers[i];  
-  
-    for(int i = 0; i < n - 1; i++)  
-    {  
-        for(int j = i + 1; j < n; j++)  
-        {  
-            if(temp[i] > temp[j])  
-            {  
-                int t = temp[i];  
-                temp[i] = temp[j];  
-                temp[j] = t;  
-            }  
-        }  
-    }  
-  
-    if(n % 2 == 0)  
-        median = (temp[n/2] + temp[n/2 - 1]) / 2.0;  
-    else  
-        median = temp[n/2];  
-  
-    pthread_exit(0);  
-}  
-  
-void* calculate_stddev(void* arg)  
-{  
-    double sum = 0;  
-  
-    for(int i = 0; i < n; i++)  
-        sum += pow(numbers[i] - mean, 2);  
-  
-    stddev = sqrt(sum / n);  
-  
-    pthread_exit(0);  
-}  
-  
-int main(int argc, char *argv[])  
-{  
-    pthread_t tid1, tid2, tid3;  
-  
-    if(argc < 2)  
-    {  
-        printf("Usage: %s number1 number2 ...\n", argv[0]);  
-        return 1;  
-    }  
-  
-    n = argc - 1;  
-  
-    for(int i = 0; i < n; i++)  
-        numbers[i] = atoi(argv[i+1]);  
-  
-    pthread_create(&tid1, NULL, calculate_mean, NULL);  
-    pthread_join(tid1, NULL);  
-  
-    pthread_create(&tid2, NULL, calculate_median, NULL);  
-    pthread_create(&tid3, NULL, calculate_stddev, NULL);  
-  
-    pthread_join(tid2, NULL);  
-    pthread_join(tid3, NULL);  
-  
-    printf("Mean = %.2f\n", mean);  
-    printf("Median = %.2f\n", median);  
-    printf("Standard Deviation = %.2f\n", stddev);  
-  
-    return 0;  
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <math.h>
+
+int *numbers;   // dynamic array
+int n;
+
+double mean;
+double median;
+double stddev;
+
+// Mean
+void* calculate_mean(void* arg)
+{
+    int sum = 0;
+
+    for(int i = 0; i < n; i++)
+        sum += numbers[i];
+
+    mean = (double)sum / n;
+
+    pthread_exit(0);
+}
+
+// Median
+void* calculate_median(void* arg)
+{
+    int *temp = (int *)malloc(n * sizeof(int));
+
+    // copy array
+    for(int i = 0; i < n; i++)
+        temp[i] = numbers[i];
+
+    // sort (bubble-ish)
+    for(int i = 0; i < n - 1; i++)
+    {
+        for(int j = i + 1; j < n; j++)
+        {
+            if(temp[i] > temp[j])
+            {
+                int t = temp[i];
+                temp[i] = temp[j];
+                temp[j] = t;
+            }
+        }
+    }
+
+    if(n % 2 == 0)
+        median = (temp[n/2] + temp[n/2 - 1]) / 2.0;
+    else
+        median = temp[n/2];
+
+    free(temp);
+
+    pthread_exit(0);
+}
+
+// Standard Deviation
+void* calculate_stddev(void* arg)
+{
+    double sum = 0;
+
+    for(int i = 0; i < n; i++)
+        sum += pow(numbers[i] - mean, 2);
+
+    stddev = sqrt(sum / n);
+
+    pthread_exit(0);
+}
+
+int main(int argc, char *argv[])
+{
+    pthread_t tid1, tid2, tid3;
+
+    if(argc < 2)
+    {
+        printf("Usage: %s number1 number2 ...\n", argv[0]);
+        return 1;
+    }
+
+    n = argc - 1;
+
+    // dynamic allocation (instead of MAX)
+    numbers = (int *)malloc(n * sizeof(int));
+
+    for(int i = 0; i < n; i++)
+        numbers[i] = atoi(argv[i+1]);
+
+    // Mean thread
+    pthread_create(&tid1, NULL, calculate_mean, NULL);
+    pthread_join(tid1, NULL);   // MUST finish before stddev
+
+    // Median & Stddev threads
+    pthread_create(&tid2, NULL, calculate_median, NULL);
+    pthread_create(&tid3, NULL, calculate_stddev, NULL);
+
+    pthread_join(tid2, NULL);
+    pthread_join(tid3, NULL);
+
+    printf("Mean = %.2f\n", mean);
+    printf("Median = %.2f\n", median);
+    printf("Standard Deviation = %.2f\n", stddev);
+
+    free(numbers);
+
+    return 0;
 }
 ```
 
