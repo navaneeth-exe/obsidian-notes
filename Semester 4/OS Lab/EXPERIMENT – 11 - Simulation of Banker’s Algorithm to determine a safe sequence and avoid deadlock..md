@@ -41,56 +41,55 @@ A system is safe if there exists a sequence such that:
 
 # 🧾 **ALGORITHM**
 
-**Step 1:** Input:
+Step 1: Input
+Read number of processes n
+Read number of resource types m
+Input:
+Allocation matrix alloc[n][m]
+Maximum matrix max[n][m]
+Available vector avail[m]
+Step 2: Calculate Need Matrix
+For each process i and resource j:
 
-- Number of processes `n`
-- Number of resources `m`
-- Allocation matrix
-- Max matrix
-- Available vector
+need[i][j] = max[i][j] - alloc[i][j]
+Step 3: Initialize Variables
+Initialize:
+finish[i] = 0 for all processes
+count = 0
+Copy:
 
----
+work[j] = avail[j]
+Step 4: Find Safe Sequence
+Repeat while count < n:
+Set found = 0
+For each process i:
+If finish[i] == 0:
+a. Check if process can execute:
 
-**Step 2:** Compute Need matrix:
+for all j: need[i][j] <= work[j]
+b. If yes:
+Add allocated resources back:
 
-Need[i][j] = Max[i][j] - Allocation[i][j]
+work[j] = work[j] + alloc[i][j]
+Store process in safe sequence:
 
----
+safeSeq[count++] = i
+Mark process as finished:
 
-**Step 3:** Initialize:
+finish[i] = 1
+Set found = 1
+Step 5: Deadlock Check
+If no process is found in a loop (found == 0):
+Print:
 
-- `Work = Available`
-- `Finish[i] = False`
+System is NOT in a safe state
+Exit
+Step 6: Safe State
+If all processes are finished:
+Print:
 
----
-
-**Step 4:** Find process `Pi` such that:
-
-Need[i][j] <= Work[j] for all j
-
----
-
-**Step 5:** If found:
-
-- Add process to safe sequence
-- Update:
-
-Work = Work + Allocation[i]  
-Finish[i] = True
-
----
-
-**Step 6:** Repeat until:
-
-- All processes finish OR
-- No process satisfies condition
-
----
-
-**Step 7:**
-
-- If all `Finish[i] = True` → SAFE STATE
-- Else → UNSAFE STATE
+System is in a SAFE STATE
+Display safe sequence
 
 ---
 
