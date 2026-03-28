@@ -136,26 +136,50 @@ pthread_join(tid1, NULL);
 
 # ⚙️ ALGORITHM
 
-1. Start
-    
-2. Read command-line arguments
-    
-3. Store values in array
-    
-4. Create thread for mean
-    
-5. Wait for mean thread
-    
-6. Create thread for median
-    
-7. Create thread for std deviation
-    
-8. Wait for threads
-    
-9. Print results
-    
-10. End
-    
+🧾 ALGORITHM – EXPERIMENT 8
+
+Step 1: Start
+
+Step 2: Read integers from command-line arguments and store in array
+
+Step 3: Declare global variables: mean, median, stddev
+
+Step 4: Create three threads using pthread_create()
+
+Thread 1 → Mean
+
+Thread 2 → Median
+
+Thread 3 → Standard Deviation
+
+
+Step 5: In mean thread
+
+Calculate sum of elements
+
+Compute mean = sum / n
+
+
+Step 6: In median thread
+
+Sort the array
+
+If n is odd → median = middle element
+
+If n is even → median = average of two middle elements
+
+
+Step 7: In standard deviation thread
+
+Compute using formula:
+stddev = √(Σ(xi − mean)² / n)
+
+
+Step 8: Use pthread_join() to wait for all threads
+
+Step 9: Print mean, median, and standard deviation
+
+Step 10: Stop
 
 ---
 
