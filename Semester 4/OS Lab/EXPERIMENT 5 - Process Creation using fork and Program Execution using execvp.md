@@ -74,6 +74,15 @@ A **process** is a program in execution. Each process has:
 # 🧾 ALGORITHM
 ## 🔹 Program 1: Addition Program (myadder)
 **Step 1:** Start  
+**Step 2:** Read two integers from command-line arguments  
+**Step 3:** Convert arguments to integers using `atoi()`  
+**Step 4:** Add the two numbers  
+**Step 5:** Display the result  
+**Step 6:** Stop
+
+### 🔹Program 2: fork() + execvp()
+
+**Step 1:** Start  
 **Step 2:** Call `fork()` system call  
 **Step 3:** Check return value
 
