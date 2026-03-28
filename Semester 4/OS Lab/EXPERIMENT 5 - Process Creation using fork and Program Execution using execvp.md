@@ -73,27 +73,26 @@ A **process** is a program in execution. Each process has:
  --- 
 # 🧾 ALGORITHM
 ## 🔹 Program 1: Addition Program (myadder)
-Step 1: Start
-Step 2: Read two integers from command-line arguments
-Step 3: Convert arguments to integers using atoi()
-Step 4: Add the two numbers
-Step 5: Display the result
-Step 6: Stop
+**Step 1:** Start  
+**Step 2:** Call `fork()` system call  
+**Step 3:** Check return value
 
-## 🔹 Program 2: fork() + execvp()
-Step 1: Start
-Step 2: Call fork() system call
-Step 3: Check return value
-     If < 0 → Error
-     If == 0 → Child process
-     If > 0 → Parent process
-Step 4 (Child Process):
-    Execute myadder using execvp()
-    Pass two integers as arguments
-Step 5: If execvp() fails, print error
-Step 6 (Parent Process):
-    Wait for child using wait()
-Step 7: Stop
+- If `< 0` → Error
+- If `== 0` → Child process
+- If `> 0` → Parent process
+
+**Step 4 (Child Process):**
+
+- Execute `myadder` using `execvp()`
+- Pass two integers as arguments
+
+**Step 5:** If `execvp()` fails, print error
+
+**Step 6 (Parent Process):**
+
+- Wait for child using `wait()`
+
+**Step 7:** Stop
 
 ---
 
