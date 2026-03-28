@@ -112,3 +112,48 @@ int main() {
     return 0;
 }
 ```
+
+
+---
+
+## ✅ **RESULT**
+
+The SSTF disk scheduling algorithm was successfully implemented, and the total head movement was calculated.
+
+---
+
+# 🔥 **VIVA QUESTIONS**
+
+## 🧠 Basic
+
+1. What is SSTF?  
+    👉 Selects closest disk request
+2. What is seek time?  
+    👉 Time to move disk head
+
+---
+
+## ⚙️ Conceptual
+
+3. Why is SSTF better than FCFS?  
+    👉 Less head movement
+4. Disadvantage of SSTF?  
+    👉 Starvation
+
+---
+
+## 🧮 Technical
+
+5. What is `visited[]` used for?  
+    👉 Track completed requests
+6. Why use `abs()`?  
+    👉 To calculate distance
+
+---
+
+## 💀 Advanced
+
+7. Can SSTF guarantee fairness?  
+    👉 No
+8. Time complexity?  
+    👉 O(n²)
