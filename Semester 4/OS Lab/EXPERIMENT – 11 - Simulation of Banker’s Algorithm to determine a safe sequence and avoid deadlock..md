@@ -91,3 +91,341 @@ Finish[i] = True
 
 - If all `Finish[i] = True` → SAFE STATE
 - Else → UNSAFE STATE
+
+---
+
+```
+#include <stdio.h>
+
+int main() {
+    int n, m;
+    int alloc[10][10], max[10][10], avail[10];
+    int need[10][10], finish[10] = {0};
+    int safeSeq[10];
+    int work[10];   // NEW: work array
+
+    int i, j, k, count = 0;
+
+    printf("Enter the number of processes: ");
+    scanf("%d", &n);
+
+    printf("Enter the number of resource types: ");
+    scanf("%d", &m);
+
+    printf("\nEnter the Allocation Matrix (%d x %d):\n", n, m);
+    for (i = 0; i < n; i++)
+        for (j = 0; j < m; j++)
+            scanf("%d", &alloc[i][j]);
+
+    printf("\nEnter the Max Matrix (%d x %d):\n", n, m);
+    for (i = 0; i < n; i++)
+        for (j = 0; j < m; j++)
+            scanf("%d", &max[i][j]);
+
+    printf("\nEnter the Available Resources (vector of %d values):\n", m);
+    for (j = 0; j < m; j++)
+        scanf("%d", &avail[j]);
+
+    // Calculate Need matrix
+    for (i = 0; i < n; i++)
+        for (j = 0; j < m; j++)
+            need[i][j] = max[i][j] - alloc[i][j];
+
+    // Copy Available to Work
+    for (j = 0; j < m; j++)
+        work[j] = avail[j];
+
+    // Display Need matrix
+    printf("\nNeed Matrix:\n");
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < m; j++)
+            printf("%3d ", need[i][j]);
+        printf("\n");
+    }
+
+    // Banker's Algorithm
+    while (count < n) {
+        int found = 0;
+
+        for (i = 0; i < n; i++) {
+            if (finish[i] == 0) {
+
+                int flag = 0;
+                for (j = 0; j < m; j++) {
+                    if (need[i][j] > work[j]) {
+                        flag = 1;
+                        break;
+                    }
+                }
+
+                if (flag == 0) {
+                    // process can execute
+                    for (k = 0; k < m; k++)
+                        work[k] += alloc[i][k];   // CHANGED: using work
+
+                    safeSeq[count++] = i;
+                    finish[i] = 1;
+                    found = 1;
+                }
+            }
+        }
+
+        if (!found) {
+            printf("\nSystem is NOT in a safe state (Deadlock possible)\n");
+            return 0;
+        }
+    }
+
+    // Safe sequence found
+    printf("\nSystem is in a SAFE STATE.\n");
+    printf("Safe Sequence: < ");
+    for (i = 0; i < n; i++)
+        printf("P%d ", safeSeq[i]);
+    printf(">\n");
+
+    return 0;
+}
+```
+
+
+---
+# **DETAILED CODE EXPLANATION – BANKER’S ALGORITHM**
+
+---
+
+## 🔹 **HEADER FILE**
+
+```
+#include <stdio.h>
+```
+
+👉 Used for input/output (`printf`, `scanf`)
+
+---
+
+# 🧱 **VARIABLE DECLARATION**
+
+```
+int n, m;  
+int alloc[10][10], max[10][10], avail[10];  
+int need[10][10], finish[10] = {0};  
+int safeSeq[10];  
+int work[10];
+```
+
+### Meaning of each:
+
+- `n` → number of processes
+- `m` → number of resource types
+
+---
+
+### 🔹 Matrices
+
+- `alloc[i][j]` → resources currently allocated to process i
+- `max[i][j]` → maximum resources needed
+
+---
+
+### 🔹 Vectors
+
+- `avail[j]` → available resources
+- `work[j]` → **temporary copy of available (VERY IMPORTANT)**
+
+---
+
+### 🔹 Other arrays
+
+- `need[i][j]` → remaining need
+- `finish[i]` → process completed or not
+- `safeSeq[]` → stores safe execution order
+
+---
+
+# 📥 **INPUT SECTION**
+
+```
+scanf("%d", &n);  
+scanf("%d", &m);
+
+```
+👉 Input number of processes and resources
+
+---
+
+### 🔹 Allocation Matrix Input
+
+```
+scanf("%d", &alloc[i][j]);
+```
+
+---
+
+### 🔹 Max Matrix Input
+
+```
+scanf("%d", &max[i][j]);
+```
+
+---
+
+### 🔹 Available Resources
+
+```
+scanf("%d", &avail[j]);
+```
+
+---
+
+# 🧮 **NEED MATRIX CALCULATION**
+
+```
+need[i][j] = max[i][j] - alloc[i][j];
+```
+
+👉 Core formula:
+
+```
+Need = Max - Allocation
+```
+
+💡 Meaning:
+
+> How many more resources each process still needs
+
+---
+
+# ⚠️ **IMPORTANT PART – WORK ARRAY**
+
+```
+for (j = 0; j < m; j++)  
+    work[j] = avail[j];
+```
+
+👉 WHY THIS EXISTS:
+
+- `work[]` is a **copy of available**
+- We modify `work`, NOT original `avail`
+
+💀 Examiner WILL ask this:
+
+> “Why not use avail directly?”
+
+👉 Answer:
+
+> “To preserve original resource values, we use work as a temporary variable.”
+
+---
+
+# 🖨️ **PRINT NEED MATRIX**
+
+```
+printf("%3d ", need[i][j]);
+```
+👉 Just for display (not part of logic)
+
+---
+
+# 🔁 **MAIN LOOP (BANKER’S LOGIC)**
+
+```
+while (count < n)
+```
+
+👉 Loop runs until all processes finish
+
+---
+
+## 🔍 **FIND SAFE PROCESS**
+
+```
+if (finish[i] == 0)
+```
+
+👉 Only check unfinished processes
+
+---
+
+### 🔹 CONDITION CHECK
+
+```
+if (need[i][j] > work[j])
+```
+
+👉 If process needs more than available → cannot run
+
+---
+
+### 🔹 FLAG LOGIC
+
+```
+flag = 1;
+```
+
+👉 Means process cannot execute
+
+---
+
+## ✅ **IF PROCESS CAN EXECUTE**
+
+if (flag == 0)
+
+👉 Means:
+
+Need <= Work
+
+---
+
+# 🔄 **RESOURCE ALLOCATION (SIMULATION)**
+
+for (k = 0; k < m; k++)  
+    work[k] += alloc[i][k];
+
+👉 What happens:
+
+- Process finishes
+- Releases its resources
+- Resources added back to `work`
+
+💡 Example:
+
+Work = [3,2,1]  
+Alloc = [1,0,2]  
+  
+New Work = [4,2,3]
+
+---
+
+## 🔹 UPDATE STATE
+
+safeSeq[count++] = i;  
+finish[i] = 1;  
+found = 1;
+
+- Add process to safe sequence
+- Mark as completed
+- `found = 1` → progress happened
+
+---
+
+# 🚨 **UNSAFE STATE CHECK**
+
+if (!found)
+
+👉 If no process can execute:
+
+printf("System is NOT in a safe state");
+
+💀 Meaning:
+
+> Deadlock may occur
+
+---
+
+# 🧾 **SAFE STATE OUTPUT**
+
+printf("Safe Sequence: < ");
+
+printf("P%d ", safeSeq[i]);
+
+👉 Displays execution order
