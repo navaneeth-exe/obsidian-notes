@@ -189,6 +189,7 @@ int main() {
 
 ## 📤 **OUTPUT (Example)**
 
+```
 Enter number of processes: 3  
 Enter Arrival Time and Burst Time:  
 0 5  
@@ -202,6 +203,7 @@ P3   2   8   16  6   14
   
 Average Waiting Time = 3.33  
 Average Turnaround Time = 8.67
+```
 
 ---
 
