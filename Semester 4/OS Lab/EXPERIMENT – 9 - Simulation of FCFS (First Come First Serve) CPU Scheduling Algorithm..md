@@ -136,7 +136,7 @@ int main() {
   
     Process p[n], temp;  
   
-    printf("Enter Arrival Time and Burst Time:\n");  
+	    printf("Enter Arrival Time and Burst Time:\n");  
     for (int i = 0; i < n; i++) {  
         p[i].pid = i + 1;  
         scanf("%d %d", &p[i].at, &p[i].bt);  
