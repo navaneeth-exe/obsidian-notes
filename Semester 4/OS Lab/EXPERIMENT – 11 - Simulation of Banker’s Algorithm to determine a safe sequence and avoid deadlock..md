@@ -39,57 +39,89 @@ A system is safe if there exists a sequence such that:
 
 ---
 
-# 🧾 **ALGORITHM**
+# **Algorithm – Banker’s Algorithm (Using Work Array)**
 
-Step 1: Input
-Read number of processes n
-Read number of resource types m
-Input:
-Allocation matrix alloc[n][m]
-Maximum matrix max[n][m]
-Available vector avail[m]
-Step 2: Calculate Need Matrix
-For each process i and resource j:
+### **Step 1: Input**
 
-need[i][j] = max[i][j] - alloc[i][j]
-Step 3: Initialize Variables
-Initialize:
-finish[i] = 0 for all processes
-count = 0
-Copy:
+1. Read number of processes `n`
+2. Read number of resource types `m`
+3. Input:
+    - Allocation matrix `alloc[n][m]`
+    - Maximum matrix `max[n][m]`
+    - Available vector `avail[m]`
 
-work[j] = avail[j]
-Step 4: Find Safe Sequence
-Repeat while count < n:
-Set found = 0
-For each process i:
-If finish[i] == 0:
-a. Check if process can execute:
+---
 
-for all j: need[i][j] <= work[j]
-b. If yes:
-Add allocated resources back:
+### **Step 2: Calculate Need Matrix**
 
-work[j] = work[j] + alloc[i][j]
-Store process in safe sequence:
+4. For each process `i` and resource `j`:
+    
+    need[i][j] = max[i][j] - alloc[i][j]
+    
 
-safeSeq[count++] = i
-Mark process as finished:
+---
 
-finish[i] = 1
-Set found = 1
-Step 5: Deadlock Check
-If no process is found in a loop (found == 0):
-Print:
+### **Step 3: Initialize Variables**
 
-System is NOT in a safe state
-Exit
-Step 6: Safe State
-If all processes are finished:
-Print:
+5. Initialize:
+    - `finish[i] = 0` for all processes
+    - `count = 0`
+6. Copy:
+    
+    work[j] = avail[j]
+    
 
-System is in a SAFE STATE
-Display safe sequence
+---
+
+### **Step 4: Find Safe Sequence**
+
+7. Repeat while `count < n`:
+    - Set `found = 0`
+8. For each process `i`:
+    - If `finish[i] == 0`:
+        
+        a. Check if process can execute:
+        
+        for all j: need[i][j] <= work[j]
+        
+        b. If yes:
+        
+        - Add allocated resources back:
+            
+            work[j] = work[j] + alloc[i][j]
+            
+        - Store process in safe sequence:
+            
+            safeSeq[count++] = i
+            
+        - Mark process as finished:
+            
+            finish[i] = 1
+            
+        - Set `found = 1`
+
+---
+
+### **Step 5: Deadlock Check**
+
+9. If no process is found in a loop (`found == 0`):
+    - Print:
+        
+        System is NOT in a safe state
+        
+    - Exit
+
+---
+
+### **Step 6: Safe State**
+
+10. If all processes are finished:
+
+- Print:
+    
+    System is in a SAFE STATE
+    
+- Display safe sequence
 
 ---
 
