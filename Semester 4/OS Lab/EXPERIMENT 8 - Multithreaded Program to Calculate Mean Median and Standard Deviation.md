@@ -142,7 +142,7 @@ pthread_join(tid1, NULL);
 
 **Step 2:** Read integers from command-line arguments and store in array
 
-**Step 3:** Declare global variables: `mean`, `median`, `stddev`
+**Step 3:** Declare global variables: `mean`, `median`, `stddev`, *numbers, n
 
 **Step 4:** Create three threads using `pthread_create()`
 
