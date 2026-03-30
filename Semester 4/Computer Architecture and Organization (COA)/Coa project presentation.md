@@ -1,129 +1,131 @@
 
 
-🎤 🔥 FULL PRESENTATION SCRIPT (YOUR PART)
-
-
----
-
-🟢 TRANSITION TO YOUR PART
-
-> “Now I will demonstrate how pipeline hazards occur and how they are handled using the Ripes simulator.”
-
-
-
+# 🎤 🔥 FINAL PRESENTATION (WITH STAGE NAMES)
 
 ---
 
-🟡 PAGE 9 — PROGRAM / INSTRUCTIONS USED
+# 🟢 TRANSITION
 
-
----
-
-🔹 INTRO LINE
-
-> “To study pipeline hazards, we implemented three types of programs: data hazard, load-use hazard, and control hazard.”
-
-
-
+> “Now I will demonstrate pipeline hazards and how they are handled in a 5-stage pipelined RISC-V processor.”
 
 ---
 
-⚡ 1. DATA HAZARD DEMO
+## 💥 ALSO SAY THIS ONCE
 
-💻 Show Code:
+> “The five stages are: Instruction Fetch (IF), Instruction Decode (ID), Execute (EX), Memory Access (MEM), and Write Back (WB).”
 
+---
+
+# ⚡ 1. DATA HAZARD (FORWARDING)
+
+## 💻 Code:
+
+```c
 addi x1, x0, 10
 addi x2, x0, 5
 add x3, x1, x2
 sub x4, x3, x2
-
-
----
-
-🎬 While running (step-by-step)
-
-> “Here, the sub instruction depends on the result of the add instruction.”
-
-
-
-👉 point at pipeline
-
-> “The add instruction produces the result, but the next instruction needs it before it is written back.”
-
-
-
+```
 
 ---
 
-👉 Now point at datapath
+## 🎬 While stepping execution
 
-> “Instead of waiting, the processor forwards the result directly from a later stage to the execute stage.”
+👉 Point to pipeline
 
+### 💬 SAY:
 
+> “The add instruction goes through IF, ID, EX, MEM, and WB stages.”
 
-
----
-
-🔥 FINAL LINE
-
-> “So this data hazard is resolved using forwarding, and no pipeline stall occurs.”
-
-
-
+> “The result of add is generated in the EX stage but officially written in the WB stage.”
 
 ---
 
-⚡ 2. LOAD-USE HAZARD DEMO
+👉 Point to next instruction (`sub`)
 
-💻 Show Code:
+> “The sub instruction needs the result of add during its EX stage.”
 
+---
+
+## 🔥 KEY LINE (VERY IMPORTANT)
+
+> “But at that time, the result is still in the pipeline and not yet written back.”
+
+---
+
+👉 Point at datapath forwarding line
+
+> “So the processor forwards the result from the MEM stage of the add instruction to the EX stage of the sub instruction.”
+
+---
+
+## ✅ FINAL LINE
+
+> “This is called data forwarding, and it avoids a pipeline stall.”
+
+---
+
+# ⚡ 2. LOAD-USE HAZARD (STALL)
+
+## 💻 Code:
+
+```c
 addi x2, x0, 0
 lw x1, 0(x2)
 add x3, x1, x2
-
-
----
-
-🎬 Run slowly
-
-👉 point at pipeline bubble
-
-> “Here, the add instruction depends on data loaded from memory.”
-
-
-
+```
 
 ---
 
-> “But the data is available only after the memory stage, so forwarding cannot be applied immediately.”
+## 🎬 Step execution slowly
 
+👉 Point to lw
 
-
-
----
-
-👉 point at bubble
-
-> “So the processor inserts a stall or bubble.”
-
-
-
+> “The lw instruction reads data from memory during the MEM stage.”
 
 ---
 
-🔥 FINAL LINE
+👉 Point to add
 
-> “This introduces a one-cycle delay in execution.”
-
-
-
+> “The add instruction needs this data in its EX stage.”
 
 ---
 
-⚡ 3. CONTROL HAZARD DEMO
+## 🔥 IMPORTANT LINE
 
-💻 Show Code:
+> “But the data is only available at the end of the MEM stage of lw.”
 
+---
+
+👉 Point to bubble
+
+> “So when add reaches the EX stage, the data is not ready.”
+
+---
+
+## 💬 SAY:
+
+> “Forwarding cannot be used here because the data is not yet available.”
+
+---
+
+👉 Point to stall
+
+> “So the pipeline inserts a stall between ID and EX stages.”
+
+---
+
+## ✅ FINAL LINE
+
+> “This causes a one-cycle delay called a pipeline stall.”
+
+---
+
+# ⚡ 3. CONTROL HAZARD (FLUSHING)
+
+## 💻 Code:
+
+```c
 addi x1, x0, 5
 addi x2, x0, 5
 beq x1, x2, target
@@ -131,274 +133,145 @@ addi x3, x0, 1
 addi x4, x0, 2
 target:
 addi x5, x0, 9
-
-
----
-
-🎬 Run step-by-step
-
-👉 point where wrong instructions appear
-
-> “Here, the branch instruction creates a control hazard.”
-
-
-
+```
 
 ---
 
-> “The processor does not know whether the branch will be taken immediately.”
+## 🎬 Step execution
 
+👉 Point to beq
 
-
-
----
-
-👉 point to wrong instructions
-
-> “So it fetches the next instructions assuming sequential execution.”
-
-
-
+> “The branch instruction is evaluated in the EX stage.”
 
 ---
 
-👉 then show flush
+## 🔥 KEY LINE
 
-> “Once the branch decision is made, the incorrect instructions are flushed.”
-
-
-
+> “But the processor fetches the next instruction in the IF stage before knowing the branch result.”
 
 ---
 
-🔥 FINAL LINE
+👉 Point to wrong instructions
 
-> “This results in a performance penalty due to wasted cycles.”
-
-
-
+> “So instructions like addi x3 and addi x4 are fetched and move through IF and ID stages.”
 
 ---
 
-🟢 PAGE 10 — RESULTS AND OBSERVATIONS
+👉 Then show flush
 
-
----
-
-🔹 START
-
-> “From the simulation, we observe how instructions move through the five pipeline stages: IF, ID, EX, MEM, and WB.”
-
-
-
+> “Once the branch decision is made in the EX stage, these incorrect instructions are flushed.”
 
 ---
 
-👉 Show pipeline window
+## 💬 SAY:
 
-> “Multiple instructions are executed simultaneously in different stages.”
-
-
-
+> “So instructions in IF and ID stages are discarded.”
 
 ---
 
-🔹 KEY RESULT
+## ✅ FINAL LINE
 
-> “This improves instruction throughput.”
-
-
-
+> “This is called pipeline flushing and it causes performance loss.”
 
 ---
 
-🔹 BUT (important tone shift)
-
-> “However, pipeline hazards introduce additional clock cycles.”
-
-
-
+# 🟡 PAGE 10 — RESULTS (WITH STAGES)
 
 ---
 
-🔹 CONNECT WITH DEMOS
+## 💬 SAY:
 
-> “Data hazards are handled using forwarding, so no delay occurs.”
-
-
-
-> “Load-use hazards introduce stalls.”
-
-
-
-> “Control hazards require flushing of incorrect instructions.”
-
-
-
+> “Each instruction passes through IF, ID, EX, MEM, and WB stages.”
 
 ---
 
-🔥 FINAL LINE
+👉 Show pipeline
 
-> “So overall performance depends on how efficiently hazards are handled.”
-
-
-
+> “Different instructions occupy different stages at the same time.”
 
 ---
 
-🟣 PAGE 11 — ANALYSIS AND DISCUSSION
+## 🔥 IMPORTANT LINE
 
-
----
-
-🔹 START
-
-> “Now analyzing the results…”
-
-
-
+> “This overlapping of stages improves throughput.”
 
 ---
 
-🔹 EXPLAIN CLEARLY
+## 👉 CONNECT HAZARDS
 
-> “Pipeline improves performance by allowing parallel execution of instructions.”
+> “In data hazard, forwarding occurs between MEM and EX stages.”
 
+> “In load-use hazard, a stall is inserted between ID and EX stages.”
 
-
-
----
-
-> “Data hazards are efficiently handled using forwarding.”
-
-
-
+> “In control hazard, instructions in IF and ID stages are flushed.”
 
 ---
 
-> “Load-use hazards introduce delays because of memory dependency.”
-
-
-
+# 🟣 PAGE 11 — ANALYSIS (PRO LEVEL)
 
 ---
 
-> “Control hazards reduce efficiency due to pipeline flushing.”
+## 💬 SAY:
 
-
-
-
----
-
-🔹 DISCUSSION PART
-
-> “Among all hazards, load-use and control hazards impact performance more.”
-
-
-
+> “Pipeline improves performance by executing multiple instructions across IF, ID, EX, MEM, and WB stages simultaneously.”
 
 ---
 
-> “Efficient techniques like forwarding, stalling, and flushing are necessary to maintain correct execution.”
-
-
-
+> “Data hazards are resolved using forwarding between stages.”
 
 ---
 
-🔥 FINAL KILLER LINE
-
-> “Although pipelining improves throughput, hazards increase the number of clock cycles and reduce overall efficiency.”
-
-
-
+> “Load-use hazards cause delay because data is only available after MEM stage.”
 
 ---
 
-💻 DATAPATH EXPLANATION (SHOW THIS AFTER ANY DEMO)
-
-👉 Switch to datapath view
-
+> “Control hazards cause flushing of instructions in IF and ID stages.”
 
 ---
 
-💬 SAY:
+## 🔥 FINAL LINE
 
-> “This is the processor datapath showing how instructions flow through different components.”
-
-
-
+> “So although pipelining improves throughput, hazards increase clock cycles and reduce efficiency.”
 
 ---
 
-👉 POINT:
+# 💻 DATAPATH EXPLANATION (STAGE-WISE)
 
-PC → Instruction Fetch
-
-Register File → Decode
-
-ALU → Execute
-
-Memory → Memory stage
-
-Register Write → Write back
-
-
+👉 Open datapath
 
 ---
 
-🔥 ADD THIS LINE
+## 💬 SAY:
 
-> “Each stage processes a different instruction simultaneously, enabling pipelining.”
+> “In IF stage, instruction is fetched from instruction memory.”
 
+> “In ID stage, registers are read.”
 
+> “In EX stage, ALU performs computation.”
 
+> “In MEM stage, data memory is accessed.”
 
----
-
-🎯 END YOUR PART LIKE A PRO
-
-> “So through this simulation, we clearly observe how pipeline hazards occur and how they are resolved using different techniques.”
-
-
-
+> “In WB stage, result is written back to register.”
 
 ---
 
-🧠 QUICK MEMORY CHEAT (LAST SECOND REVISION)
+## 🔥 FINAL LINE
 
-Data hazard → forwarding → no stall
-
-Load-use → stall → 1 cycle delay
-
-Control → flush → wrong instructions removed
-
-
+> “All these stages operate simultaneously for different instructions.”
 
 ---
 
-😈 BONUS — IF YOU WANT TO LOOK ELITE
+# 🧠 FINAL CHEAT CODE
 
-Drop this randomly:
+If you forget everything, just say:
 
-> “Pipeline improves throughput, not latency.”
+👉 “In EX stage…”  
+👉 “In MEM stage…”  
+👉 “Between ID and EX…”
 
-
-
-
----
-
-💀 FINAL REAL TALK
-
-If you: ✅ Step execution slowly
-✅ Point at pipeline + datapath
-✅ Say “stage” and “cycle” confidently
-
-👉 You’ll look like you BUILT the processor 💀🔥
-
+💀 That alone will boost your marks.
 
 ---
 
-If you want, next I can: 🎯 Simulate viva questions + savage answers
-🎯 Or give you exact hand gestures + where to point on screen (crazy useful)
+If you want next: 🔥 I can simulate **full viva grilling with answers**  
+🔥 Or give you **diagram-based explanation like your PDF (cycle-wise)** which examiners LOVE
