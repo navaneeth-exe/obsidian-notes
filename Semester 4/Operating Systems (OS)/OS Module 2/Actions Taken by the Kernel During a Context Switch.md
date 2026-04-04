@@ -32,6 +32,9 @@ Context switching is the process where the CPU stops executing one process and s
 - Context switching takes time (overhead)
 - Too many switches reduce performance
 - No useful work done during switching
+
+---
+
 # **Steps Performed During a Context Switch**
 
 ## **1) Save the State of the Current Process**
