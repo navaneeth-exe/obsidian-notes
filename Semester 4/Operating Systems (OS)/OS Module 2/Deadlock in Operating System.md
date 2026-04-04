@@ -54,3 +54,6 @@ A circular chain of processes exists where each process waits for a resource hel
 P1 → waits for P2  
 P2 → waits for P3  
 P3 → waits for P1
+
+
+![[Pasted image 20260404111350.png]]
