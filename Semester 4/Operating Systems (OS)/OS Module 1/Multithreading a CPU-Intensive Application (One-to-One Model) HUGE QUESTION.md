@@ -48,6 +48,6 @@ The middle part of the program is completely CPU-bound, meaning it mainly uses p
 
 In the one-to-one threading model, each user thread maps to a kernel thread, and each kernel thread can run on a separate processor, allowing simultaneous execution.
 
-If fewer than four threads are used, some processors remain idle and CPU resources are wasted. If more than four threads are used, context switching increases and performance may decrease.
+	If fewer than four threads are used, some processors remain idle and CPU resources are wasted. If more than four threads are used, context switching increases and performance may decrease.
 
 Hence, creating exactly four threads ensures full CPU utilization, true parallelism, and minimum overhead.
