@@ -1,4 +1,4 @@
-## **Definition**
+	## **Definition**
 
 Banker’s Algorithm is a **deadlock avoidance algorithm** used to allocate resources safely to processes.  
 It checks whether the system can remain in a **safe state** after allocation.
