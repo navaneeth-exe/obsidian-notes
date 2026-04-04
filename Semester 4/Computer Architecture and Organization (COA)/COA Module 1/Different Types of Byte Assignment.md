@@ -13,37 +13,36 @@ This leads to **two types of byte assignment**.
 
 ### Definition
 
-In **Big Endian**, the **most significant byte (MSB)** is stored at the **lowest memory address**.
+In **Big Endian**, the **Most Significant Byte (MSB)** of a word is stored in the **lowest memory address**, followed by the remaining bytes in decreasing significance.
 
-📌 _Simple rule:_
-
-> **Big end first**
+📌 **Mnemonic:** _Big end first_
 
 ---
 
-### Example
+### Example (WRITE THIS IN EXAM 🔥)
 
-Assume:
+Given:
 
-- 32-bit data = `0x12345678`
-- Starting address = `1000`
+- 32-bit number = `0x12345678`
+- Starting memory address = `1000`
 
-|Memory Address|Byte Stored|
+|Address|Content|
 |---|---|
-|1000|12|
+|1000|12 (MSB)|
 |1001|34|
 |1002|56|
-|1003|78|
+|1003|78 (LSB)|
 
-👉 MSB (`12`) is stored first.
+👉 Memory order matches **human reading order**.
 
 ---
 
-### Key Points
+### Characteristics of Big Endian
 
-- Human-readable order
-- Easier for debugging
-- Used in some processors and network protocols
+- MSB stored at lowest address
+- Easier to understand and debug
+- Network protocols follow Big Endian (network byte order)
+- Address points to **most significant byte**
 
 ---
 
@@ -51,34 +50,48 @@ Assume:
 
 ### Definition
 
-In **Little Endian**, the **least significant byte (LSB)** is stored at the **lowest memory address**.
+In **Little Endian**, the **Least Significant Byte (LSB)** of a word is stored in the **lowest memory address**, and the remaining bytes follow in increasing significance.
 
-📌 _Simple rule:_
-
-> **Little end first**
+📌 **Mnemonic:** _Little end first_
 
 ---
 
-### Example
+### Example (VERY IMPORTANT 🔥)
 
 Same data:
 
-- 32-bit data = `0x12345678`
-- Starting address = `1000`
+- 32-bit number = `0x12345678`
+- Starting memory address = `1000`
 
-|Memory Address|Byte Stored|
+|Address|Content|
 |---|---|
-|1000|78|
+|1000|78 (LSB)|
 |1001|56|
 |1002|34|
-|1003|12|
+|1003|12 (MSB)|
 
-👉 LSB (`78`) is stored first.
+👉 Address points to **least significant byte**.
 
 ---
 
-### Key Points
+### Characteristics of Little Endian
 
+- LSB stored at lowest address
 - Faster arithmetic operations
+- Efficient for incrementing addresses
 - Widely used in modern processors
-- Address points to least significant byte
+
+---
+
+## Byte Assignment & CPU Addressing (IMPORTANT CONCEPT)
+
+- In **Big Endian**:
+    - Address of word = address of MSB
+- In **Little Endian**:
+    - Address of word = address of LSB
+
+This affects:
+
+- Pointer arithmetic
+- Data interpretation
+- System interoperability
