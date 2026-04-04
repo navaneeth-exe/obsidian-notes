@@ -1,2 +1,6 @@
-[[Banker’s Algorithm]]
+Subject : [[Operating Systems]]
+
+## Topics  
+
+1. [[Banker’s Algorithm]]
 
