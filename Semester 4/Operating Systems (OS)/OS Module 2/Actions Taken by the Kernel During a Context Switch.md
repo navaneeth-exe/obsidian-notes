@@ -1,11 +1,37 @@
 ## **Definition
 
-A **context switch** is the process where the operating system kernel saves the state of the currently running process and loads the state of another process so the CPU can switch execution.
+Context switching is the process where the CPU stops executing one process and switches to another by saving the current process state and loading the next process state. It allows multiple processes to share a single CPU efficiently.
 
-It allows multiple processes to share the CPU efficiently.
+---
+### **Why Context Switching is Needed 🎯**
+
+- For **multitasking** (running many processes “at the same time”)
+- To keep CPU busy while one process waits for I/O
+- For **time-sharing systems** so each process gets CPU time
+- To maintain system responsiveness
+---
+
+### **Why Context Switching is Needed 🎯**
+
+- For **multitasking** (running many processes “at the same time”)
+- To keep CPU busy while one process waits for I/O
+- For **time-sharing systems** so each process gets CPU time
+- To maintain system responsiveness
+
+---
+### **Advantages ✅**
+
+- Enables multitasking
+- Better CPU utilization
+- Improves system responsiveness
 
 ---
 
+### **Disadvantages ❌**
+
+- Context switching takes time (overhead)
+- Too many switches reduce performance
+- No useful work done during switching
 # **Steps Performed During a Context Switch**
 
 ## **1) Save the State of the Current Process**
