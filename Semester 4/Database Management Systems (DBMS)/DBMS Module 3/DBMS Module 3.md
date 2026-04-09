@@ -14,3 +14,5 @@ Subject: [[Database Management Systems]]
 - [[CAP Theorem]]
 - [[NoSQL Databases]]
 - [[BASE Properties]]
+- [[Schedule in DBMS]]
+- 
