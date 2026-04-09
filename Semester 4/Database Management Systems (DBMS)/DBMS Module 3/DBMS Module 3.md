@@ -15,4 +15,5 @@ Subject: [[Database Management Systems]]
 - [[NoSQL Databases]]
 - [[BASE Properties]]
 - [[Schedule in DBMS]]
-- 
+- [[Why Concurrency Causes Problems in DBMS]]
+- [[Why Concurrency Control is Needed]]
