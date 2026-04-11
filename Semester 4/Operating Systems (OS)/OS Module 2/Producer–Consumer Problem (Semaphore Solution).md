@@ -75,6 +75,24 @@ while(1)
 - `signal(E)` → Increase empty count
 ---
 
+We use three semaphores to control access to the shared buffer.
+1️⃣ Semaphore S (Mutex)
+Value = 1
+Purpose → Ensures mutual exclusion
+Meaning → Only ONE process (producer or consumer) can access the buffer at a time
+Prevents race conditions
+👉 Think: “Only one guy in the kitchen at a time.”
+2️⃣ Semaphore E (Empty)
+Initial value = n (buffer size)
+Counts number of empty slots
+Producer must check this before adding item
+👉 If E = 0 → Buffer is full → Producer must wait
+3️⃣ Semaphore F (Full)
+Initial value = 0
+Counts number of filled slots
+Consumer must check this before removing item
+👉 If F = 0 → Buffer empty → Consumer must wait
+---
 # **Producer Working (Step-by-step)**
 
 ```
