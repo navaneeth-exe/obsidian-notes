@@ -12,4 +12,5 @@ Subject : [[Operating Systems]]
 8. [[Readers–Writers Problem]]
 9. [[Compare and Swap]]
 10. [[Test-and-Set Instruction]]
+11. [[Critical Section]]
 
