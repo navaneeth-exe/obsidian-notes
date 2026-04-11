@@ -9,4 +9,5 @@ Subject : [[Operating Systems]]
 5. [[Semaphore – Implementation of wait() and signal()]]
 6. [[Producer–Consumer Problem (Semaphore Solution)]]
 7. [[Dining Philosophers Problem]]
+8. [[Readers–Writers Problem]]
 
