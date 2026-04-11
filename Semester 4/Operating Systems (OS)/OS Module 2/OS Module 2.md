@@ -8,5 +8,5 @@ Subject : [[Operating Systems]]
 4. [[How Semaphore Achieves Mutual Exclusion in Critical Section]]
 5. [[Semaphore – Implementation of wait() and signal()]]
 6. [[Producer–Consumer Problem (Semaphore Solution)]]
-7. 
+7. [[Dining Philosophers Problem]]
 
