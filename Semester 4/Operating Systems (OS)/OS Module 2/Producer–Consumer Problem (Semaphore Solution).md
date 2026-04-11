@@ -200,3 +200,58 @@ So:
 5. Producer can produce again.
 
 👉 Result: Buffer gets free space again.
+
+
+## **Solution Using Semaphores**
+
+```
+We use 3 semaphores:
+
+mutex = 1      // for mutual exclusion  
+empty = N      // number of empty slots  
+full = 0       // number of filled slots
+```
+
+---
+
+## **Producer Code**
+
+```
+while(true) {  
+    produce_item();  
+  
+    wait(empty);   // check empty space  
+    wait(mutex);   // enter critical section  
+  
+    add_item_to_buffer();  
+  
+    signal(mutex); // exit critical section  
+    signal(full);  // increase filled slots  
+}
+```
+
+---
+
+## **Consumer Code**
+
+```
+while(true) {  
+    wait(full);    // check items available  
+    wait(mutex);   // enter critical section  
+  
+    remove_item_from_buffer();  
+  
+    signal(mutex); // exit critical section  
+    signal(empty); // increase empty slots  
+  
+    consume_item();  
+}
+```
+
+---
+
+## **Explanation**
+
+- `empty` → prevents overflow
+- `full` → prevents underflow
+- `mutex` → prevents race condition
