@@ -19,9 +19,11 @@ Mounting is the process of **attaching a file system to a directory (mount point
 
 ### **Syntax**
 
+```
 int mount(const char *source, const char *target,  
           const char *filesystemtype, unsigned long flags,  
           const void *data);
+```
 
 ---
 
@@ -48,7 +50,9 @@ int mount(const char *source, const char *target,
 
 ## **Example**
 
+```
 mount /dev/sda1 /mnt
+```
 
 👉 `/dev/sda1` is attached to `/mnt`
 
@@ -76,7 +80,9 @@ mount /dev/sda1 /mnt
 
 👉 To detach:
 
+```
 umount /mnt
+```
 
 ---
 
