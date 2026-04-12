@@ -1,3 +1,6 @@
+REFER OS NOTES TOOO
+REFER DIAGRAM IN PDF OR MS
+
 ## **Definition**
 
 A page table is a data structure used to **map virtual page numbers (VPN) to physical page numbers (PPN)** for address translation.

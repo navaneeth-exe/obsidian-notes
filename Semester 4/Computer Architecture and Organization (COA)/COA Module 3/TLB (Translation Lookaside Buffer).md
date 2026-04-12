@@ -1,5 +1,7 @@
 
 REFER OS NOTES TOOO
+
+REFER DIAGRAM IN PDF OR MS
 ## **Definition**
 
 TLB is a **small, fast cache memory** that stores **recently used page table entries** to speed up address translation.
