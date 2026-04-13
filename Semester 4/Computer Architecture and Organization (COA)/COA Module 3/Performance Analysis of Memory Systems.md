@@ -50,7 +50,7 @@ Miss Rate=1−Hit Rate\text{Miss Rate} = 1 - \text{Hit Rate}Miss Rate=1−Hit
 
 ## **7. Average Memory Access Time (AMAT)**
 
-AMAT=Hit Time+(Miss Rate×Miss Penalty)\text{AMAT} = \text{Hit Time} + (\text{Miss Rate} \times \text{Miss Penalty})AMAT=Hit Time+(Miss Rate×Miss Penalty)
+AMAT=Hit Time+(Miss Rate×Miss Penalty)
 
 - Represents **average time to access memory**
 - Includes both hit and miss cases
