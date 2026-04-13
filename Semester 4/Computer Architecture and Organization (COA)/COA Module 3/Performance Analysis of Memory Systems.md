@@ -13,7 +13,7 @@ The performance of a memory system is evaluated using parameters such as **hit r
 
 ## **2. Hit Rate (H)**
 
-Hit Rate=Number of HitsTotal Memory Accesses\text{Hit Rate} = \frac{\text{Number of Hits}}{\text{Total Memory Accesses}}Hit Rate=Total Memory AccessesNumber of Hits​
+`Hit Rate= Number of Hits​ / Total Memory Accesses`
 
 - Higher hit rate → better performance
 
@@ -21,7 +21,9 @@ Hit Rate=Number of HitsTotal Memory Accesses\text{Hit Rate} = \frac{\text{N
 
 ## **3. Miss Rate (MR)**
 
-Miss Rate=1−Hit Rate\text{Miss Rate} = 1 - \text{Hit Rate}Miss Rate=1−Hit Rate
+$$
+Miss Rate=1−Hit Rate\
+$$
 
 ---
 
@@ -50,7 +52,7 @@ Miss Rate=1−Hit Rate\text{Miss Rate} = 1 - \text{Hit Rate}Miss Rate=1−Hit
 
 ## **7. Average Memory Access Time (AMAT)**
 
-AMAT=Hit Time+(Miss Rate×Miss Penalty)
+`AMAT=Hit Time + (Miss Rate × Miss Penalty)'
 
 - Represents **average time to access memory**
 - Includes both hit and miss cases
