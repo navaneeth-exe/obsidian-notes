@@ -22,7 +22,7 @@
 ## **Step 4: Mapping Formula**
 
 $$
-Set Number=Block Numbermod  2
+	Set Number=Block Number(mod)  2
 $$
 
 ---
