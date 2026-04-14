@@ -1,4 +1,143 @@
 
+# Example 4 – Temporal Locality with a Direct Mapped Cache
+
+## Given
+
+- Cache type: **Direct Mapped Cache**
+- Cache size: **8 entries (sets)**
+- Block size: **1 word**
+- Cache initially **empty**
+- Loop runs **5 times**
+
+RISC-V code:
+
+```
+addi s0, zero, 5  
+addi s1, zero, 0  
+  
+LOOP:  
+beq s0, zero, DONE  
+lw s2, 4(s1)  
+lw s3, 12(s1)  
+lw s4, 8(s1)  
+addi s0, s0, -1  
+j LOOP  
+DONE:
+```
+
+According to the example in your notes, each loop iteration performs **three memory accesses**.
+
+---
+
+# Step 1 – Total Memory Accesses
+
+Loop runs **5 times**
+
+Each iteration has **3 loads**
+
+lw s2, 4(s1)  
+lw s3, 12(s1)  
+lw s4, 8(s1)
+
+So
+
+Total accesses=5×3=15\text{Total accesses} = 5 \times 3 = 15Total accesses=5×3=15
+
+---
+
+# Step 2 – Memory Addresses Accessed
+
+The loads access these addresses:
+
+|Instruction|Address|
+|---|---|
+|lw s2|0x4|
+|lw s3|0xC|
+|lw s4|0x8|
+
+So the program repeatedly accesses:
+
+0x4  
+0xC  
+0x8
+
+---
+
+# Step 3 – Cache Mapping
+
+Cache has **8 sets**.
+
+These addresses map to:
+
+|Address|Cache Set|
+|---|---|
+|0x4|Set 1|
+|0x8|Set 2|
+|0xC|Set 3|
+
+Because the **set index bits select the cache set**.
+
+---
+
+# Step 4 – First Iteration
+
+Cache is **empty initially**, so all accesses are **misses**.
+
+|Address|Result|
+|---|---|
+|0x4|Miss → stored in Set 1|
+|0xC|Miss → stored in Set 3|
+|0x8|Miss → stored in Set 2|
+
+Misses so far:
+
+3 misses
+
+---
+
+# Step 5 – Remaining 4 Iterations
+
+Now these addresses are **already in cache**.
+
+Since **no other addresses map to sets 1, 2, or 3**, there is **no conflict**.
+
+So all accesses become:
+
+Cache Hits
+
+Number of accesses remaining:
+
+4 iterations × 3 accesses = 12
+
+All **12 are hits**.
+
+---
+
+# Step 6 – Miss Rate Calculation
+
+Total accesses:
+
+15
+
+Misses:
+
+3
+
+Miss Rate=315Miss\ Rate = \frac{3}{15}Miss Rate=153​ Miss Rate=0.2=20%Miss\ Rate = 0.2 = 20\%Miss Rate=0.2=20%
+
+---
+
+# Final Answer (Exam Conclusion)
+
+- Total memory accesses = **15**
+- Cache misses = **3**
+- Cache hits = **12**
+
+Miss Rate = 3/15 = 20%\textbf{Miss Rate = 3/15 = 20\%}Miss Rate = 3/15 = 20%
+
+
+
+---
 
 # Example – Cache Block Conflict (Direct Mapped Cache)
 
