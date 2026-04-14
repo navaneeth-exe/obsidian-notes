@@ -73,3 +73,47 @@ Executable File
         ↓  
 Execution by CPU
 ```
+
+
+---
+
+optional
+
+## **Steps in Conversion**
+
+### **1. Instruction Analysis**
+
+- Assembler reads each instruction
+- Identifies **opcode and operands**
+
+---
+
+### **2. Opcode Translation**
+
+- Mnemonic is converted into corresponding **binary opcode**
+
+👉 Example:  
+ADD → specific binary code
+
+---
+
+### **3. Address Resolution**
+
+- Labels and variables are assigned **memory addresses**
+- Symbol table is used
+
+---
+
+### **4. Instruction Formation**
+
+- Combine:
+    - Opcode
+    - Operand (register/address)  
+        → Form complete **machine instruction**
+
+---
+
+### **5. Output Generation**
+
+- Final output is **machine code (binary/hex)**
+- Ready for execution
