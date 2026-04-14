@@ -41,7 +41,9 @@ lw s4, 8(s1)
 
 So
 
-Total accesses=5×3=15\text{Total accesses} = 5 \times 3 = 15Total accesses=5×3=15
+$$
+Total accesses=5×3=15\
+$$
 
 ---
 
@@ -57,9 +59,11 @@ The loads access these addresses:
 
 So the program repeatedly accesses:
 
+```
 0x4  
 0xC  
 0x8
+```
 
 ---
 
@@ -91,8 +95,9 @@ Cache is **empty initially**, so all accesses are **misses**.
 
 Misses so far:
 
+```
 3 misses
-
+```
 ---
 
 # Step 5 – Remaining 4 Iterations
@@ -107,7 +112,9 @@ Cache Hits
 
 Number of accesses remaining:
 
+```
 4 iterations × 3 accesses = 12
+```
 
 All **12 are hits**.
 
@@ -117,13 +124,21 @@ All **12 are hits**.
 
 Total accesses:
 
+```
 15
+```
 
 Misses:
 
+```
 3
-
-Miss Rate=315Miss\ Rate = \frac{3}{15}Miss Rate=153​ Miss Rate=0.2=20%Miss\ Rate = 0.2 = 20\%Miss Rate=0.2=20%
+```
+$$
+Miss Rate= 3 / 15​
+$$
+```
+Miss Rate=0.2=20%
+```
 
 ---
 
@@ -133,7 +148,9 @@ Miss Rate=315Miss\ Rate = \frac{3}{15}Miss Rate=153​ Miss Rate=0.2=20%Miss\
 - Cache misses = **3**
 - Cache hits = **12**
 
+$$
 Miss Rate = 3/15 = 20%\textbf{Miss Rate = 3/15 = 20\%}Miss Rate = 3/15 = 20%
+$$
 
 
 
