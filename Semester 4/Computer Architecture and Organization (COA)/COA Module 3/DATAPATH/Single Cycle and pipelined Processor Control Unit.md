@@ -51,8 +51,6 @@ The control unit generates several control signals to control datapath component
 |ResultSrc|Selects ALU result or memory output|
 |PCSrc|Determines next PC value|
 
-📌 (Listed clearly in page 2)
-
 ---
 
 ## **4. Structure of Control Unit**
@@ -104,3 +102,15 @@ The control unit generates several control signals to control datapath component
 4. ALUOp is sent to ALU decoder.
 5. ALU decoder uses funct fields to determine exact operation.
 6. Final control signals control datapath components (ALU, memory, registers).
+
+---
+optional
+## **. Working of Control Unit**
+
+### 🔥 Step-by-step:
+
+1. Instruction is fetched from instruction memory.
+2. Opcode field (bits [6:0]) is sent to control unit.
+3. Control unit decodes opcode.
+4. Based on instruction type (R, I, S, etc.), it generates control signals.
+5. These signals control datapath components to execute instruction.
