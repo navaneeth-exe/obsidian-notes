@@ -1,51 +1,73 @@
-## **1. Simple Instruction Set**
+## **## **Definition**
 
-- Small number of instructions
-- Easy to decode and execute
-
----
-
-## **2. Fixed-Length Instructions**
-
-- Usually **32-bit instructions**
-- Simplifies instruction decoding
+RISC (Reduced Instruction Set Computer) is a CPU design approach that uses **simple and efficient instructions** to improve performance.
 
 ---
 
-## **3. Load/Store Architecture**
+## **Key Features**
 
-- Only **LOAD and STORE** access memory
-- All operations done in registers
+### **1. Simple Instruction Set**
+
+- Uses a **small number of simple instructions**
+- Each instruction performs a **single operation**
 
 ---
 
-## **4. Large Number of Registers**
+### **2. Fixed-Length Instructions**
 
-- Reduces memory access
+- All instructions are of **same size (usually 32 bits)**
+- Makes decoding **faster and easier**
+
+---
+
+### **3. Load/Store Architecture**
+
+- Only **LOAD and STORE** instructions access memory
+- All other operations are performed on **registers**
+
+---
+
+### **4. Large Number of Registers**
+
+- Provides many **general-purpose registers**
+- Reduces need for frequent memory access
+
+---
+
+### **5. Few Addressing Modes**
+
+- Limited number of addressing modes
+- Simplifies hardware design
+
+---
+
+### **6. Hardwired Control Unit**
+
+- Uses **hardwired control instead of microprogramming**
 - Faster execution
 
 ---
 
-## **5. Single Cycle Execution**
+### **7. Efficient Pipelining**
 
-- Most instructions execute in **one clock cycle**
-
----
-
-## **6. Pipelining Support**
-
-- Instructions executed in stages:
-    - Fetch → Decode → Execute
-- Improves throughput
+- Simple and uniform instructions
+- Makes **pipelining easy and efficient**
 
 ---
 
-## **7. Hardwired Control Unit**
+### **8. One Instruction per Cycle (Ideal)**
 
-- Faster than microprogrammed control
+- Most instructions execute in **single clock cycle**
 
 ---
-
 ## **8. Compiler Optimization**
 
 - Relies on compiler to optimize code
+---
+
+## **Advantages**
+
+- Faster execution
+- Simple hardware
+- Low power consumption
+- High performance
