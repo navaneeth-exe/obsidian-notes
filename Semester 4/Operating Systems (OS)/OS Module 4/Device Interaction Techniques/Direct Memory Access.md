@@ -3,7 +3,7 @@
 **Direct Memory Access (DMA)** is an I/O technique in which data is transferred directly between the I/O device and main memory without continuous involvement of the CPU.
 
 ---
-
+![[Pasted image 20260416014149.png|462]]
 ## **Working Mechanism**
 
 1. The CPU initializes the DMA controller by providing:
