@@ -3,11 +3,6 @@
 **Serial communication** is a method of data transmission in which data is sent **one bit at a time** over a single communication channel or wire.
 
 ---
-### **Definition**
-
-**Serial communication** is a method of data transmission in which data is sent **one bit at a time** over a single communication channel or wire.
-
----
 
 ### **Basic Concept**
 
