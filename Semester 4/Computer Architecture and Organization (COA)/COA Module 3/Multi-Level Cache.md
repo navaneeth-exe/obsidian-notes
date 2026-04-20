@@ -69,7 +69,7 @@ Multi-level cache is a memory organization technique where **more than one level
 
 From your PDF (multi-level):
 
-AMAT=tL1+MRL1×(tL2+MRL2×tMemory)AMAT = t_{L1} + MR_{L1} \times (t_{L2} + MR_{L2} \times t_{Memory})AMAT=tL1​+MRL1​×(tL2​+MRL2​×tMemory​)
+`AMAT=tL1+MRL1×(tL2+MRL2×tMemory)`
 
 Where:
 
