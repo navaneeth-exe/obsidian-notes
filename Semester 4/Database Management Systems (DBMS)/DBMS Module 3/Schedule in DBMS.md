@@ -68,6 +68,7 @@ R1(A) → W1(A) → R2(B) → W2(B)
 **Disadvantages:**
 
 - Poor performance
+- Low resource utilization
 - No parallel execution
 
 ---
