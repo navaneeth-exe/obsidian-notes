@@ -102,8 +102,8 @@ R1(A) → R2(A) → W1(A) → W2(A)
 - Better CPU utilization 🚀
 - Faster execution
 
-**Disadvantages:**
-
+**Disadvantages:** 
+- Can cause data inconsistency
 - Can cause problems like:
     - Lost update
     - Dirty read
