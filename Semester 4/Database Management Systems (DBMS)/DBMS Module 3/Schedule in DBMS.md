@@ -77,7 +77,7 @@ R1(A) → W1(A) → R2(B) → W2(B)
 
 **Definition:**
 
-A **non-serial (concurrent) schedule** is a schedule in which operations of multiple transactions are **interleaved**.
+A **non-serial (concurrent) schedule** is a schedule in which operations of multiple transactions are **interleaved** (executed simultaneously).
 
 ---
 
