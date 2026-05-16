@@ -54,7 +54,7 @@ A system is safe if there exists a sequence such that:
 
 ### **Step 2: Calculate Need Matrix**
 
-4. For each process `i` and resource `j`:
+4. For each process `i` and each resource `j`:
     
     need[i][j] = max[i][j] - alloc[i][j]
     
