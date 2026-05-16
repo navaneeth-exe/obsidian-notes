@@ -49,11 +49,10 @@ The Dining Philosophers problem is a classical synchronization problem.
 **Step 4:** Each philosopher repeats forever:
 
 - Think (sleep for some time):
-	- Philosopher thinks for some time
+	Philosopher thinks for some time
 - Wait on mutex semaphore
-    
     sem_wait(mutex)
-	
+		This allows only `N−1` philosophers to compete for chopsticks simultaneously.
     
 - Pick up left chopstick
     
@@ -63,7 +62,8 @@ The Dining Philosophers problem is a classical synchronization problem.
     
     sem_wait(chopstick[(i+1)%N])
     
-- Eat
+- Eating
+	 Philosopher eats for some time
 - Release left chopstick
     
     sem_post(chopstick[i])
@@ -73,7 +73,7 @@ The Dining Philosophers problem is a classical synchronization problem.
     sem_post(chopstick[(i+1)%N])
     
 - Signal mutex
-    
+	    Leave critical section
     sem_post(mutex)
     
 
