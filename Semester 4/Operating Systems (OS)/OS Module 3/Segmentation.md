@@ -31,6 +31,14 @@ Segmentation is a memory management technique in which a process is divided into
 |0 (Code)|1000|400|
 |1 (Data)|2000|300|
 |2 (Stack)|3000|200|
+Operating system maintains a Segment Table.
+
+Each entry contains:
+| Field | Meaning                              |
+| ----- | ------------------------------------ |
+| Base  | Starting physical address of segment |
+| Limit | Length/size of segment               |
+
 
 ---
 
@@ -38,13 +46,16 @@ Segmentation is a memory management technique in which a process is divided into
 
 ![[Pasted image 20260412022201.png|489]]
 
+
+### Refer screenshot
 ### Steps:
 
-1. CPU generates **(Segment Number, Offset)**
-2. Check:
-    - If `Offset < Limit` → valid ✅
+1. CPU generates logical address **(Segment Number, Offset)**
+2. Segment number is used to access segment table.
+3. Check:
+    - If `Offset < Limit` → address is valid ✅
     - Else → **Trap (Segmentation Fault)** 🚫
-3. If valid:
+4. If valid:
     
 ```
     Physical Address = Base + Offset

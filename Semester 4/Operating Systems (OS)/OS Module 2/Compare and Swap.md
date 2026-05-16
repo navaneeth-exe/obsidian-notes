@@ -25,8 +25,7 @@ int CompareAndSwap(int *value, int expected, int new) {
 ## **Using CAS (Lock Implementation)**
 
 ```
-while (CompareAndSwap(&lock, 0, 1) != 0)  
-    ; // busy wait  
+while (CompareAndSwap(&lock, 0, 1) != 0)  ; // busy wait  
   
 // critical section  
   

@@ -3,12 +3,14 @@
 Context switching is the process in which the operating system switches the CPU from one process to another by saving the state of the current process and loading the state of the next process. This allows multiple processes to share the CPU.
 
 ---
-### **Why Context Switching is Needed 🎯**
+### When Context Switching Occurs
+Context switching happens when:
 
-- For **multitasking** (running many processes “at the same time”)
-- To keep CPU busy while one process waits for I/O
-- For **time-sharing systems** so each process gets CPU time
-- To maintain system responsiveness
+- Time slice of a process expires
+- An interrupt occurs
+- A process requests I/O
+- A higher-priority process enters
+- A process terminates
 ---
 
 ### **Why Context Switching is Needed 🎯**

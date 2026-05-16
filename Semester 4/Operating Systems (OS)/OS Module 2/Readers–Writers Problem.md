@@ -22,7 +22,7 @@ The **Readers–Writers Problem** is a synchronization problem where:
 - **Reader-priority** → readers don’t wait
 - **Writer-priority** → writers don’t starve
 
-👉 Here we write **reader-priority solution (most common)**
+👉 Here we use **reader-priority solution (most common)**
 
 # **Solution using Semaphores**
 

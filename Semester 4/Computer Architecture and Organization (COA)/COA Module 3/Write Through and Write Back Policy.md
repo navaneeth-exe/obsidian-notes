@@ -6,13 +6,16 @@ In write-through policy, whenever data is written, it is updated in **both cache
 
 ### **Working**
 
-- CPU writes data to cache
-- At the same time, data is also written to main memory
+- CPU writes data
+- Data is written to cache
+- SAME data is immediately written to disk/main memory
+- Both copies stay consistent
 
 ### **Advantages**
 
 - Ensures **data consistency**
 - Simple to implement
+- No data loss on crash
 
 ### **Disadvantages**
 
@@ -25,13 +28,16 @@ In write-through policy, whenever data is written, it is updated in **both cache
 
 ### **Definition**
 
-In write-back policy, data is written **only in cache**, and main memory is updated **only when the block is replaced**.
+In write-back policy, data is written **only in cache** initially, and main memory is updated **only when the block is replaced**.
 
 ### **Working**
 
-- CPU writes data only to cache
-- Modified block is marked (dirty bit)
-- When block is replaced → updated in main memory
+- CPU writes data
+- Data is updated only in cache
+- Cache marks that block as “dirty”
+- Data is written to disk/memory only when:
+    - Cache block is replaced 
+    - Or explicitly flushed
 
 ### **Advantages**
 
@@ -42,6 +48,7 @@ In write-back policy, data is written **only in cache**, and main memory is upda
 
 - More complex
 - Risk of inconsistency if not handled properly
+- Risk of data loss
 
 ---
 

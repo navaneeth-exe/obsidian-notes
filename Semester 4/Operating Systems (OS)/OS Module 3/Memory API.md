@@ -15,6 +15,8 @@ Memory API refers to the set of **system calls and library functions** used to *
 
 ---
 
+
+### Refer screenshot
 ## **1. malloc()**
 
 ### **Definition**
@@ -82,4 +84,3 @@ void free(void *ptr);
 int *arr = (int*) malloc(5 * sizeof(int));  
 arr = realloc(arr, 10 * sizeof(int));  
 free(arr);
-```

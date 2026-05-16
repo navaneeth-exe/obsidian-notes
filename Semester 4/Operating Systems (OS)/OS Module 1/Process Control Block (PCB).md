@@ -10,7 +10,7 @@ A **Process Control Block (PCB)** is a data structure maintained by the operatin
 - It acts like a **process identity card** 📇 for the OS.
 - The OS uses PCB to:
     - Track process state
-    - Manage scheduling
+    - Manage scheduling 
     - Perform context switching
 
 

@@ -16,6 +16,15 @@ Instead of loading the entire process into RAM:
 
 This mechanism is called **Demand Paging**.
 
+Working
+Program is divided into pages
+Only few pages are loaded into RAM initially
+CPU generates virtual address
+Address is converted to physical address
+If required page is present → executed
+If not → page fault occurs
+OS loads required page from disk to RAM
+
 ---
 
 ## Key Concepts of Virtual Memory

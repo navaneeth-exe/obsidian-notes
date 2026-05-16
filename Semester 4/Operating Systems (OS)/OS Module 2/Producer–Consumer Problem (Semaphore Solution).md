@@ -1,5 +1,7 @@
 ## **Definition**
 
+https://chatgpt.com/share/6981e9ff-3530-8001-a083-398201b90420 ith noki padik
+
 The Producer–Consumer problem is a classical synchronization problem in Operating Systems where:
 
 - A **Producer** produces data (items)

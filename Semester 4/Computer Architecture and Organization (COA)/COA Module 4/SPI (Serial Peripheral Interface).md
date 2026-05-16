@@ -46,7 +46,7 @@ SPI uses **4 hardware signals**:
 ### **4. SS / CE (Slave Select / Chip Enable)**
 
 - Active LOW signal
-- Selects the specific slave device
+- Selects the specific slave device/peripheral 
 
 ---
 

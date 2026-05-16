@@ -29,9 +29,11 @@
 
 ## **S-Type Instructions**
 
-|Instruction|Opcode (dec)|funct3 (dec)|
-|---|---|---|
-|SW|35|2|
+| Instruction | Opcode (dec) | funct3 (dec) |
+| ----------- | ------------ | ------------ |
+| SW          | 35           | 2            |
+| Sh          |              | 1            |
+| Sb          |              | 0            |
 
 ---
 

@@ -68,6 +68,7 @@ R1(A) → W1(A) → R2(B) → W2(B)
 **Disadvantages:**
 
 - Poor performance
+- Low resource utilization
 - No parallel execution
 
 ---
@@ -76,7 +77,7 @@ R1(A) → W1(A) → R2(B) → W2(B)
 
 **Definition:**
 
-A **non-serial (concurrent) schedule** is a schedule in which operations of multiple transactions are **interleaved**.
+A **non-serial (concurrent) schedule** is a schedule in which operations of multiple transactions are **interleaved** (executed simultaneously).
 
 ---
 
@@ -101,8 +102,8 @@ R1(A) → R2(A) → W1(A) → W2(A)
 - Better CPU utilization 🚀
 - Faster execution
 
-**Disadvantages:**
-
+**Disadvantages:** 
+- Can cause data inconsistency
 - Can cause problems like:
     - Lost update
     - Dirty read

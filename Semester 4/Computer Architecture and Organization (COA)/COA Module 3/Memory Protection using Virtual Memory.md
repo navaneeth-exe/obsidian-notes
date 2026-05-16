@@ -3,7 +3,6 @@
 
 Memory protection is the mechanism that **prevents one program from accessing or modifying another program’s memory**.
 
-Virtual memory provides memory protection by giving each program its own virtual address space.
 
 In multiprogramming systems, multiple programs run simultaneously and share physical memory. Memory protection ensures that one program cannot access or modify another program’s memory.
 
