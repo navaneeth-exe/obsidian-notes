@@ -79,11 +79,8 @@ A system is safe if there exists a sequence such that:
     - Set `found = 0`
 8. For each process `i`:
     - If `finish[i] == 0`:
-        
         a. Check if process can execute:
-        
-        for all j: need[i][j] <= work[j]
-        
+		        for all j: need[i][j] <= work[j]
         b. If yes:
         
         - Add allocated resources back:
