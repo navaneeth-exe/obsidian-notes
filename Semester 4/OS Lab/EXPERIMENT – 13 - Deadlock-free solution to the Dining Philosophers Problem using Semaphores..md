@@ -48,10 +48,12 @@ The Dining Philosophers problem is a classical synchronization problem.
 
 **Step 4:** Each philosopher repeats forever:
 
-- Think (sleep for some time)
+- Think (sleep for some time):
+	- Philosopher thinks for some time
 - Wait on mutex semaphore
     
     sem_wait(mutex)
+	
     
 - Pick up left chopstick
     
