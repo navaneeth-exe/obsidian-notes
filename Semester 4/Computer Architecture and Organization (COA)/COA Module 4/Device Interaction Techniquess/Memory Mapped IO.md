@@ -20,6 +20,10 @@ The CPU communicates with devices using **normal memory instructions**.
     - **STORE** → write data to device
 3. Device registers (data, status, control) are mapped into memory.
 4. CPU treats devices like **memory locations**.
+5. CPU places the address on the address bus
+6. If the address belongs to an I/O device:
+   → The device responds instead of memory
+7. Data transfer happens via data bus
 
 ---
 

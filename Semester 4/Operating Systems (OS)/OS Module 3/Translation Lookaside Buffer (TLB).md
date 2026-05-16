@@ -6,6 +6,8 @@ A **Translation Lookaside Buffer (TLB)** is a **small, fast cache memory** that 
 
 ## **Why TLB is Needed**
 
+Page table is stored in main memory (slow)
+
 Without TLB:
 
 - 1 memory access → page table
@@ -18,12 +20,14 @@ Without TLB:
 ---
 
 ## **Concept**
-
+- Located inside MMU (Memory Management Unit)
+- Works like a cache for page table
 - TLB stores:
     
     `(Virtual Page Number → Frame Number)`
     
 - It is checked **before page table**
+- It avoids accessing the page table every time
 
 👉 Think:
 

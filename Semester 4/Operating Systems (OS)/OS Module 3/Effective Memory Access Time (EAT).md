@@ -28,6 +28,9 @@ $$
 EAT=(2−h)×m
 $$
 
+EMAT = h(t+m) + (1 – h)(t+2m)
+
+
 ---
 
 ## **Explanation**

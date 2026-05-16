@@ -18,8 +18,10 @@ The CPU communicates with these devices using **special I/O instructions**.
 2. CPU uses **special instructions** like:
     - **IN** → to read data from device
     - **OUT** → to send data to device
-3. Data transfer happens through **CPU registers** (usually accumulator).
-4. Control signals specify whether it's an I/O operation.
+3. The address is placed on the address bus
+4. Data transfer happens through **CPU registers** (usually accumulator).
+5. Control signals specify whether it's an I/O operation.
+6. Corresponding device responds and data transfer happens
 
 ---
 
@@ -32,6 +34,22 @@ CPU executes:
 
 - `IN` → to read from keyboard
 - `OUT` → to send data to printer
+
+##### Example
+👉 Assume:
+Keyboard → Port 20H
+Display → Port 21H
+
+
+Read from Keyboard:
+
+IN R1, 20H
+
+
+Write to Display:
+
+OUT 21H, R1
+📌 These instructions are only for I/O, not used for memory
 
 ---
 

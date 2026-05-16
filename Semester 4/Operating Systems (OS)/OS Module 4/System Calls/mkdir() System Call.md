@@ -35,9 +35,8 @@ Every newly created directory contains **two special entries**:
 
 - Refers to the **parent directory**
 
----
-
-## **Important Points**
+....
+..
 
 - These entries are created **automatically by OS**
 - Help in **directory navigation**

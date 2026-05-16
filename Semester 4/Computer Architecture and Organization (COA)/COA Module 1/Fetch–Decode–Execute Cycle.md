@@ -1,5 +1,6 @@
 ### Definition
 
+### Refer this too : https://chatgpt.com/share/69f83738-1a70-8323-9e30-bdca63d94b58
 The **Fetch–Decode–Execute cycle** is the basic operation performed by the CPU to execute every instruction stored in memory.
 
 ---

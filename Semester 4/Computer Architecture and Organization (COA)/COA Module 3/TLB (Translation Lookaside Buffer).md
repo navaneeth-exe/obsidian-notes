@@ -55,6 +55,7 @@ Address translation using TLB is the process of converting a **virtual address t
 - Get **Physical Page Number (PPN)** directly
 - Combine **PPN + Offset** → physical address
 - Access main memory
+- Only 1 memory access
 
 ---
 

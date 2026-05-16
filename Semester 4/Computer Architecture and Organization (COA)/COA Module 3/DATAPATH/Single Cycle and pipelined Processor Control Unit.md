@@ -18,9 +18,6 @@ or
     - Data Memory
     - Multiplexers
 
-📌 From your PDF:  
-“Control unit generates appropriate control signals using combinational logic”
-
 ---
 ## **2. Inputs to Control Unit**
 
