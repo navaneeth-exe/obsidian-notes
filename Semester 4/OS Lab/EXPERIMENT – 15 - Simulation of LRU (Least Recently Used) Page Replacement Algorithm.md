@@ -8,7 +8,7 @@ To generate a random page reference string and simulate the **LRU page replaceme
 
 LRU (Least Recently Used) is a page replacement algorithm used in operating systems.
 
-It replaces:
+It replaces:lll
 
 > The page that has not been usesd for the longest period of time.
 
