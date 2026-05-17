@@ -41,13 +41,9 @@ It moves the disk head in only one direction.
 
 Start
 
----
-
 ### Step 2:
 
 Read initial head position using command line argument.
-
----
 
 ### Step 3:
 
@@ -57,13 +53,9 @@ Generate random disk requests between:
 0 to 4999
 ```
 
----
-
 ### Step 4:
 
 Sort all disk requests in ascending order.
-
----
 
 ### Step 5:
 
@@ -72,16 +64,12 @@ Initialize:
 - `current = head`
 - `total = 0`
 
----
-
 ### Step 6:
 
 Service all requests greater than or equal to head position:
 
 - Calculate head movement
 - Update current head position
-
----
 
 ### Step 7:
 
@@ -91,7 +79,6 @@ Move head to last cylinder:
 4999
 ```
 
----
 
 ### Step 8:
 
@@ -101,19 +88,15 @@ Jump from last cylinder to first cylinder:
 0
 ```
 
----
 
 ### Step 9:
 
 Service remaining requests smaller than initial head position.
 
----
 
 ### Step 10:
 
 Display total head movement.
-
----
 
 ### Step 11:
 

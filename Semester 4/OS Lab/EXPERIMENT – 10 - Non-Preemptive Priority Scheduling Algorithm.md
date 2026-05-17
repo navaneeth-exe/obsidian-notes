@@ -101,7 +101,10 @@ completed = 0
 Initialize:
 
 ```
-time = 0completed = 0totalWT = 0totalTAT = 0
+time = 0
+completed = 0
+totalWT = 0
+totalTAT = 0
 ```
 
 ### Step 4:
