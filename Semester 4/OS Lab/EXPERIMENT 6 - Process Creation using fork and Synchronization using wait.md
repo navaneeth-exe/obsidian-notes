@@ -45,7 +45,7 @@ Create a new process using `fork()`. The child process should print **“PCCSL40
 
 # ⚙️ CODE
 
-```
+```c 
 #include<stdio.h>  
 #include<sys/types.h>  
 #include<unistd.h>  
