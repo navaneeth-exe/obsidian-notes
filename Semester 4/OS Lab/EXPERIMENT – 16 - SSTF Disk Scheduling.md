@@ -45,7 +45,7 @@ SSTF (Shortest Seek Time First) selects the disk request that is **closest to th
 **Step 7:** Stop
 
 ---
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>

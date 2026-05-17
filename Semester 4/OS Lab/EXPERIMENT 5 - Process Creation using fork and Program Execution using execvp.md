@@ -122,7 +122,7 @@ A **process** is a program in execution. Each process has:
 
 ## 🔹 Code
 
-```
+```c title=adder.c c
 #include<stdio.h>  
 #include<stdlib.h>  
   
@@ -180,7 +180,7 @@ Sum = 30
 
 ## 🔹 Code
 
-```
+```c
 #include<stdio.h>  
 #include<unistd.h>  
 #include<sys/types.h>  
