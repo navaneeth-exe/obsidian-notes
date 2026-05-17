@@ -59,11 +59,7 @@ FIFO (First-In First-Out) is a page replacement algorithm where:
 - If not present:
     - Replace page at position `k`
     - Update:
-        
-```
-        k = (k + 1) % frames
-```
-        
+        `k = (k + 1) % frames`
     - Increment page faults
 
 ---
