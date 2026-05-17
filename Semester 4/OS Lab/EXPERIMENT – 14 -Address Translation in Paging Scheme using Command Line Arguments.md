@@ -213,7 +213,8 @@ int main(int argc, char *argv[]) {
 # 📤 **COMPILATION & EXECUTION**
 
 ```
-gcc paging.c -o paging./paging 4 1 2050
+gcc paging.c -o paging
+./paging 4 1 2050
 ```
 
 ---
