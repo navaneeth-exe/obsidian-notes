@@ -10,7 +10,7 @@ LRU (Least Recently Used) is a page replacement algorithm used in operating syst
 
 It replaces:
 
-> The page that has not been used for the longest period of time.
+> The page that has not been usesd for the longest period of time.
 
 ---
 
