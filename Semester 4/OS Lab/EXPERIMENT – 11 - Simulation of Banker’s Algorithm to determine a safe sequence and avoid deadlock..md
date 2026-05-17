@@ -123,8 +123,15 @@ A system is safe if there exists a sequence such that:
 
 ---
 
+<<<<<<< main
 ``` c title:Bankers.c
 
+=======
+
+```c title:bankersAlgo.c
+
+
+>>>>>>> origin/main
 #include <stdio.h>
 
 int main() {
