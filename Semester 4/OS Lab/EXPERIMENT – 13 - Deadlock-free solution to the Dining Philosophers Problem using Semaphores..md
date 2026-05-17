@@ -88,6 +88,8 @@ The Dining Philosophers problem is a classical synchronization problem.
 # 💻 **PROGRAM**
 
 ```
+
+
 #include <stdio.h>  
 #include <stdlib.h>  
 #include <pthread.h>  

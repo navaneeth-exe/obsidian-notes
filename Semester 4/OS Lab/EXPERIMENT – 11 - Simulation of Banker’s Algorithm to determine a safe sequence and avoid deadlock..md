@@ -57,6 +57,7 @@ A system is safe if there exists a sequence such that:
 4. For each process `i` and each resource `j`:
     
     need[i][j] = max[i][j] - alloc[i][j]
+    - display need matrix 
     
 
 ---
@@ -122,7 +123,8 @@ A system is safe if there exists a sequence such that:
 
 ---
 
-```
+``` c title:Bankers.c
+
 #include <stdio.h>
 
 int main() {
