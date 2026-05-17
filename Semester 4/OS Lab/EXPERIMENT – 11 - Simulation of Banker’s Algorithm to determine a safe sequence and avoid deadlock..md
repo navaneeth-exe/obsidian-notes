@@ -122,7 +122,10 @@ A system is safe if there exists a sequence such that:
 
 ---
 
-```
+
+```c title:bankersAlgo.c
+
+
 #include <stdio.h>
 
 int main() {
