@@ -116,7 +116,7 @@ Average TAT = totalTAT / n`
 
 # 💻 **PROGRAM**
 
-```
+```c
 #include <stdio.h>  
   
 typedef struct {  
