@@ -54,7 +54,7 @@ This program demonstrates how to extract process execution details using the `/p
 
 ## 💻 **PROGRAM**
 
-```
+```c
 #include<stdio.h>  
 #include<unistd.h>  
 #include<stdlib.h>  

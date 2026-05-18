@@ -80,7 +80,7 @@ Stop
 
 # 💻 **PROGRAM**
 
-```
+```c title:LRU.c c
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

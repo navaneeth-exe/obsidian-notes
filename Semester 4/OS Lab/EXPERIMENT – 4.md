@@ -54,7 +54,7 @@ In Linux/Unix systems, a new process is created using the **`fork()` system call
 
 ## 💻 **PROGRAM**
 
-```
+```c
 #include<stdio.h>  
 #include<unistd.h>  
 #include<sys/types.h>  
