@@ -257,3 +257,7 @@ Because every row must be uniquely identifiable.
 |---|---|
 |PRIMARY KEY|Unique identification|
 |FOREIGN KEY|Table relationship|
+
+
+
+[[DBMS Lab Experiments]]

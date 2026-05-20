@@ -271,3 +271,6 @@ Bad for performance and validation.
 |VARCHAR|Variable text|
 |DATE|Dates|
 |BLOB|Binary data|
+
+
+[[DBMS Lab Experiments]]

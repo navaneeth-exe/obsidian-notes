@@ -204,3 +204,7 @@ Answer:
 | CREATE  | Create object             |
 | ALTER   | Modify structure          |
 | DROP    | Delete object permanently |
+
+
+
+[[DBMS Lab Experiments]]

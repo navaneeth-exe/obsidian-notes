@@ -169,3 +169,8 @@ Usually cleaner and often optimized better by DBMS.
 |---|---|
 |IN|Match values from list|
 |NOT IN|Exclude values from list|
+
+
+
+
+[[DBMS Lab Experiments]]

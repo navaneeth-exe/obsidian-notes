@@ -276,3 +276,8 @@ Because NULL is not a normal value.
 |Comparison|= > < >= <= !=|
 |Logical|AND OR NOT|
 |Special|LIKE IN BETWEEN IS NULL|
+
+
+
+
+[[DBMS Lab Experiments]]

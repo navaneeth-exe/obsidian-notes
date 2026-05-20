@@ -316,3 +316,7 @@ Empty result shown.
 |ORDER BY|Sort rows|
 |DISTINCT|Remove duplicates|
 |COUNT|Count rows|
+
+
+
+[[DBMS Lab Experiments]]

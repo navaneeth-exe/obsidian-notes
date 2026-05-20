@@ -244,3 +244,7 @@ Yes, but as text.
 |CREATE TABLE|Creates new table|
 |ALTER TABLE|Modifies table|
 |DROP TABLE|Deletes table|
+
+
+
+[[DBMS Lab Experiments]]

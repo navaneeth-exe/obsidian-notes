@@ -260,3 +260,7 @@ No. It only filters query output unless used with DELETE/UPDATE.
 |OR|Any condition true|
 |LIKE|Pattern matching|
 |BETWEEN|Range checking|
+
+
+
+[[DBMS Lab Experiments]]

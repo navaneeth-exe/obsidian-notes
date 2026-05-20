@@ -218,3 +218,7 @@ No. It only displays them.
 |USE database_name|Selects database|
 |SHOW TABLES|Shows tables|
 |DESC table_name|Shows table structure|
+
+
+
+[[DBMS Lab Experiments]]

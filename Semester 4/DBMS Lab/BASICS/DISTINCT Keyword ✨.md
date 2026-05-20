@@ -158,3 +158,7 @@ No. Only in query result.
 |Keyword|Purpose|
 |---|---|
 |DISTINCT|Removes duplicate output values|
+
+
+
+[[DBMS Lab Experiments]]

@@ -164,3 +164,7 @@ VALUES ('ABC', 'Arun', 'CSE');
 ```
 
 If `rollno` is INT → error 💀
+
+
+
+[[DBMS Lab Experiments]]

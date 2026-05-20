@@ -282,3 +282,7 @@ Yes.
 ```sql
 salary INT CHECK(salary > 0)
 ```
+
+
+
+[[DBMS Lab Experiments]]
