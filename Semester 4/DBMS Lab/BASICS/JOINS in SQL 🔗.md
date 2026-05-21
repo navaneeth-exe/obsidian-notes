@@ -260,6 +260,118 @@ FULL OUTER JOIN table2
 ON table1.column = table2.column;
 ```
 
+
+In MySQL, `FULL OUTER JOIN` is **not directly supported**.
+
+
+# Why?
+
+MySQL supports:
+
+- INNER JOIN
+- LEFT JOIN
+    
+- RIGHT JOIN
+    
+
+But not native `FULL OUTER JOIN`.
+
+---
+
+# How to Achieve FULL OUTER JOIN in MySQL 🔥
+
+We combine:
+
+- LEFT JOIN
+    
+- RIGHT JOIN  
+    using `UNION`
+    
+
+---
+
+# Syntax
+
+```sql
+SELECT *
+FROM table1
+LEFT JOIN table2
+ON table1.id = table2.id
+
+UNION
+
+SELECT *
+FROM table1
+RIGHT JOIN table2
+ON table1.id = table2.id;
+```
+
+---
+
+# Example
+
+```sql
+SELECT student.name, department.deptname
+FROM student
+LEFT JOIN department
+ON student.deptid = department.deptid
+
+UNION
+
+SELECT student.name, department.deptname
+FROM student
+RIGHT JOIN department
+ON student.deptid = department.deptid;
+```
+
+---
+
+# What it does 🧠
+
+- LEFT JOIN gives all left table rows
+    
+- RIGHT JOIN gives all right table rows
+    
+- UNION combines both results
+    
+
+This behaves like FULL OUTER JOIN.
+
+---
+
+# Important Viva Questions 🎤
+
+### Q1. Does MySQL support FULL OUTER JOIN directly?
+
+No.
+
+---
+
+### Q2. How can FULL OUTER JOIN be achieved in MySQL?
+
+Using LEFT JOIN + RIGHT JOIN with UNION.
+
+---
+
+### Q3. Why is UNION used?
+
+To combine results of both joins.
+
+---
+
+# Teacher Trap Question 😭
+
+### “Will FULL OUTER JOIN query work directly in MySQL?”
+
+No 💀  
+Only works directly in some DBMS like:
+
+- PostgreSQL
+    
+- Oracle Database
+    
+
+[[DBMS Lab Experiments]]
 ---
 
 # Output Example
