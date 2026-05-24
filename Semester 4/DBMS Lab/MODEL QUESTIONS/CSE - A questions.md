@@ -471,3 +471,5 @@
 9. Display books costing more than average price.
     
 10. Display distinct publishers from the table.
+
+[[DBMS Lab]]
